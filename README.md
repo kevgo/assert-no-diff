@@ -1,4 +1,4 @@
-# JsDiff with console output
+# JsDiff with console output [![Dependency Status](https://david-dm.org/kevgo/jsdiff-console.svg)](https://david-dm.org/kevgo/jsdiff-console)
 
 This is a very simple helper method for tests that involve
 diffing JSON data.
