@@ -1,0 +1,20 @@
+{
+  "name": "jsdiff-console",
+  "version": "1.0.0",
+  "author": "Kevin Goslar",
+  "dependencies": {
+    "chalk": "^1.1.1",
+    "diff": "^2.2.1"
+  },
+  "description": "Compares JS hashes using JsDiff and outputs the result on the console",
+  "homepage": "https://github.com/kevgo/jsdiff-console#readme",
+  "license": "ISC",
+  "main": "lib/jsdiff-console.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevgo/jsdiff-console.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
