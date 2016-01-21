@@ -4,7 +4,7 @@ require! {
 }
 
 
-diff-json = (expected, actual, done) ->
+module.exports = (expected, actual, done) ->
   changes = diff.diffJson expected, actual
   if changes.length is 1
     done!
@@ -19,7 +19,3 @@ diff-json = (expected, actual, done) ->
       process.stdout.write color part.value
     console.log red '\n\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n'
     done 'Mismatching recorded calls, see above'
-
-
-
-module.export = diff-json
