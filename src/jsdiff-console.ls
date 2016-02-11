@@ -4,20 +4,25 @@ require! {
 }
 
 
-module.exports = (expected, actual, done) ->
-  | !expected  =>  throw new Error "JsDiffConsole: parameter 1 is falsy"
-  | !actual    =>  throw new Error "JsDiffConsole: parameter 2 is falsy"
-  changes = diff.diffJson expected, actual
-
-  return done! if changes.length is 1
-
+log-differences = (differences) ->
   console.log red '\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
   console.log red 'Mismatching call records!\n'
-  for part in changes
+  for part in differences
     color = switch
     | part.added    =>  green
     | part.removed  =>  red
     | _             =>  grey
     process.stdout.write color part.value
   console.log red '\n\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n'
-  done 'Mismatching recorded calls, see above'
+
+
+
+module.exports = (actual, expected, done) ->
+  | !actual    =>  throw new Error "JsDiffConsole: parameter 2 is falsy"
+  | !expected  =>  throw new Error "JsDiffConsole: parameter 1 is falsy"
+  differences = diff.diffJson actual, expected
+  if differences.length is 1
+   done!
+  else
+    log-differences differences
+    done 'mismatching records'
