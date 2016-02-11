@@ -7,6 +7,9 @@
     "diff": "^2.2.1"
   },
   "description": "Compares JS hashes using JsDiff and outputs the result on the console",
+  "devDependencies": {
+    "david": "^7.0.1"
+  },
   "homepage": "https://github.com/kevgo/jsdiff-console#readme",
   "license": "ISC",
   "main": "lib/jsdiff-console.js",
