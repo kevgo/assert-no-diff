@@ -10,9 +10,12 @@
   "devDependencies": {
     "david": "^7.0.1"
   },
+  "files": [
+    "dist"
+  ],
   "homepage": "https://github.com/kevgo/jsdiff-console#readme",
   "license": "ISC",
-  "main": "lib/jsdiff-console.js",
+  "main": "dist/jsdiff-console.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kevgo/jsdiff-console.git"
