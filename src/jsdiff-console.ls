@@ -20,7 +20,7 @@ log-differences = (differences) ->
 module.exports = (actual, expected, done) ->
   | !actual    =>  throw new Error "JsDiffConsole: parameter 2 is falsy"
   | !expected  =>  throw new Error "JsDiffConsole: parameter 1 is falsy"
-  differences = diff.diffJson actual, expected
+  differences = diff.diffJson expected, actual
   if differences.length is 1
    done!
   else
