@@ -11,7 +11,7 @@ log-differences = (differences) ->
     color = switch
     | part.added    =>  green
     | part.removed  =>  red
-    | _             =>  grey
+    | otherwise     =>  grey
     process.stdout.write color part.value
   console.log red '\n\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n'
 
