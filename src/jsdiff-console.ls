@@ -6,7 +6,7 @@ require! {
 
 log-differences = (differences) ->
   console.log red '\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
-  console.log red 'Mismatching call records!\n'
+  console.log red 'Mismatching data!\n'
   for part in differences
     color = switch
     | part.added    =>  green
