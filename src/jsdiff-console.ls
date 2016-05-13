@@ -8,13 +8,14 @@ log-differences = (differences, {console, process} = {console, process}) ->
   console.log red '\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
   console.log red 'Mismatching data!\n'
   for part in differences
-    color = switch
-    | part.added    =>  green
-    | part.removed  =>  red
-    | otherwise     =>  grey
-    process.stdout.write color part.value
+    process.stdout.write get-color(part)(part.value)
   console.log red '\n\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n'
 
+
+get-color = (part) ->
+  | part.added    =>  green
+  | part.removed  =>  red
+  | otherwise     =>  grey
 
 
 module.exports = (actual, expected, output, done) ->
