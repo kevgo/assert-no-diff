@@ -9,7 +9,6 @@
   "description": "Compares JS hashes using JsDiff and outputs the result on the console",
   "devDependencies": {
     "chai": "3.5.0",
-    "david": "^7.0.1",
     "dim-console": "0.3.1",
     "mocha": "2.4.5",
     "o-tools": "0.2.0",
