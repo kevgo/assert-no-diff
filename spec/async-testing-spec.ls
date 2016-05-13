@@ -36,7 +36,6 @@ describe 'async testing of hashes', ->
     it 'calls the given callback with no error', ->
       expect(@err).to.be.undefined
 
-
     it 'prints no console output', ->
       expect(dim-console.output).to.equal ''
 
@@ -56,7 +55,6 @@ describe 'async testing of hashes', ->
 
     it 'calls the given callback with an error', ->
       expect(@err).to.equal 'mismatching records'
-
 
     it 'prints a diff on the console', ->
       expect(dim-console.output).to.contain 'Mismatching data!'
