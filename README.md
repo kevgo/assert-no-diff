@@ -23,4 +23,3 @@ diffjs-console actual-json, expected-json, done
 ## Development
 
 * run tests: `spec` (you need to have `watch` running for this)
-

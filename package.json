@@ -12,7 +12,8 @@
     "david": "^7.0.1",
     "dim-console": "0.3.1",
     "mocha": "2.4.5",
-    "o-tools": "0.2.0"
+    "o-tools": "0.2.0",
+    "o-tools-livescript": "1.0.3"
   },
   "files": [
     "dist"
