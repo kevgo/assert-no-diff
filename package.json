@@ -25,7 +25,7 @@
     "url": "git+https://github.com/kevgo/jsdiff-console.git"
   },
   "scripts": {
-    "prepublish": "bin/build",
+    "prepublish": "node_modules/.bin/build",
     "test": "bin/spec"
   }
 }
