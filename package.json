@@ -10,6 +10,7 @@
   "devDependencies": {
     "chai": "3.5.0",
     "dim-console": "0.3.1",
+    "livescript": "1.4.0",
     "mocha": "2.4.5",
     "o-tools": "0.2.0",
     "o-tools-livescript": "1.0.3"
