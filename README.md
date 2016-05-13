@@ -18,3 +18,9 @@ to have your tests automatically fail if the data structures are different.
 ```livescript
 diffjs-console actual-json, expected-json, done
 ```
+
+
+## Development
+
+* run tests: `spec` (you need to have `watch` running for this)
+
