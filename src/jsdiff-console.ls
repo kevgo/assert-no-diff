@@ -4,7 +4,7 @@ require! {
 }
 
 
-log-differences = (differences, {console, process} = {console, process}) ->
+log-differences = (differences, {console, process} = {console: global.console, process: global.process}) ->
   console.log red '\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
   console.log red 'Mismatching data!\n'
   for part in differences
