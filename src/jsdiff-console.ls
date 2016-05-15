@@ -21,7 +21,7 @@ get-color = (part) ->
 module.exports = (actual, expected, output, done) ->
   | !actual    =>  throw new Error "JsDiffConsole: parameter 2 is falsy"
   | !expected  =>  throw new Error "JsDiffConsole: parameter 1 is falsy"
-  | !done      =>  done = output
+  | !done      =>  done = output ; output = undefined
   differences = diff.diffJson expected, actual
   if differences.length is 1
    done!
