@@ -10,8 +10,8 @@ diffing JSON data.
 It uses the excellent [jsdiff](https://github.com/kpdecker/jsdiff) module.
 Using it in your tests is super easy:
 
-```livescript
-diffjs-console actual-json, expected-json, done
+```javascript
+diffjs-console(actual-json, expected-json, done);
 ```
 
 The third argument is the asynchronous return method for your tests.
