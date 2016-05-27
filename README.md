@@ -11,17 +11,12 @@ It uses the excellent [jsdiff](https://github.com/kpdecker/jsdiff) module.
 Using it in your tests is super easy:
 
 ```livescript
-require! 'jsdiff-console'
-
-jsdiff-console actual-json, expected-json
-```
-
-You can provide an async return method as the third argument
-to have your tests automatically fail if the data structures are different.
-
-```livescript
 diffjs-console actual-json, expected-json, done
 ```
+
+The third argument is the asynchronous return method for your tests.
+JsDiff-Console will call it with the error message.
+Your test runner must render it to the user.
 
 
 ## Development
