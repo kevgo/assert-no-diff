@@ -11,12 +11,13 @@ It uses the excellent [jsdiff](https://github.com/kpdecker/jsdiff) module.
 Using it in your tests is super easy:
 
 ```javascript
-diffjs-console(actual-json, expected-json, done);
+diffjsConsole(actual-json, expected-json, done);
 ```
 
 The third argument is the asynchronous return method for your tests.
-JsDiff-Console will call it with the error message.
-Your test runner must render it to the user.
+JsDiff-Console will call it with the error message,
+formatted with console colors.
+Your test runner must print it to the user.
 
 
 ## Development
