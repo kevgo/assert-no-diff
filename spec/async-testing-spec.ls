@@ -14,14 +14,11 @@ Feature: asynchronous testing of hashes
 require! {
   '..' : jsdiff-console
   'chai' : {expect}
-  'dim-console'
+  'chalk' : {green, grey, red}
 }
 
 
 describe 'async testing of hashes', ->
-
-  after-each ->
-    dim-console.reset!
 
 
   context 'matching data', (...) ->
@@ -30,14 +27,11 @@ describe 'async testing of hashes', ->
       data =
         first-name: 'Jean-Luc'
         last-name: 'Picard'
-      jsdiff-console data, data, dim-console, (@err) ~>
+      jsdiff-console data, data, (@err) ~>
         done!
 
     it 'calls the given callback with no error', ->
       expect(@err).to.be.undefined
-
-    it 'prints no console output', ->
-      expect(dim-console.output).to.equal ''
 
 
 
@@ -50,13 +44,14 @@ describe 'async testing of hashes', ->
       actual =
         first-name: 'Captain'
         last-name: 'Picard'
-      jsdiff-console actual, expected, dim-console, (@err) ~>
+      jsdiff-console actual, expected, (@err) ~>
         done!
 
-    it 'calls the given callback with an error', ->
-      expect(@err).to.equal 'mismatching records'
-
-    it 'prints a diff on the console', ->
-      expect(dim-console.output).to.contain 'Mismatching data!'
-      expect(dim-console.output).to.contain '"firstName": "Jean-Luc"'
-      expect(dim-console.output).to.contain '"firstName": "Captain"'
+    it 'calls the given callback with an error that includes the diff', ->
+      expect(@err).to.eql "
+        mismatching records:\n\n
+        #{grey  '{\n'}
+        #{red   '  "firstName": "Jean-Luc",\n'}
+        #{green '  "firstName": "Captain",\n'}
+        #{grey  '  "lastName": "Picard"\n}'}
+        "

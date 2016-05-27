@@ -1,15 +1,10 @@
 require! {
-  'chalk' : {red, green, grey}
+  'chalk' : {green, grey, red, reset}
   'diff'
 }
 
-
-log-differences = (differences, {console, process} = {console: global.console, process: global.process}) ->
-  console.log red '\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
-  console.log red 'Mismatching data!\n'
-  for part in differences
-    process.stdout.write get-color(part)(part.value)
-  console.log red '\n\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n'
+render-differences = (differences) ->
+  [get-color(part)(part.value) for part in differences].join ''
 
 
 get-color = (part) ->
@@ -18,7 +13,7 @@ get-color = (part) ->
   | otherwise     =>  grey
 
 
-module.exports = (actual, expected, output, done) ->
+module.exports = (actual, expected, done) ->
   | !actual    =>  throw new Error "JsDiffConsole: parameter 2 is falsy"
   | !expected  =>  throw new Error "JsDiffConsole: parameter 1 is falsy"
   | !done      =>  done = output ; output = undefined
@@ -26,5 +21,4 @@ module.exports = (actual, expected, output, done) ->
   if differences.length is 1
    done!
   else
-    log-differences differences, output
-    done 'mismatching records'
+    done "mismatching records:\n\n#{render-differences differences}"
