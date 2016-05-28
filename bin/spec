@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
+node_modules/o-tools/bin/lint
 mocha --compilers ls:livescript "**/*spec.ls"

@@ -9,6 +9,7 @@
   "description": "Compares JS hashes using JsDiff and outputs the result on the console",
   "devDependencies": {
     "chai": "3.5.0",
+    "dependency-lint": "4.0.1",
     "livescript": "1.5.0",
     "mocha": "2.5.3",
     "o-tools": "0.3.4",
