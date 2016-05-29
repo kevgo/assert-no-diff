@@ -1,3 +1,18 @@
+machine:
+  node:
+    version: 6.1.0
+
+
+test:
+
+  pre:
+    - node_modules/o-tools-livescript/bin/build
+
+  post:
+    - gulp coverage
+    - cat coverage/lcov.info  | ./node_modules/coveralls/bin/coveralls.js
+
+
 deployment:
   publish:
     branch: release

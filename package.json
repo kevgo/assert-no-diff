@@ -9,7 +9,11 @@
   "description": "Compares JS hashes using JsDiff and outputs the result on the console",
   "devDependencies": {
     "chai": "3.5.0",
+    "coveralls": "2.11.9",
     "dependency-lint": "4.0.1",
+    "gulp": "3.9.1",
+    "gulp-livescript-istanbul": "0.0.2",
+    "gulp-mocha": "2.2.0",
     "livescript": "1.5.0",
     "mocha": "2.5.3",
     "o-tools": "0.4.0",
@@ -26,7 +30,7 @@
     "url": "git+https://github.com/kevgo/jsdiff-console.git"
   },
   "scripts": {
-    "prepublish": "node_modules/.bin/build",
+    "prepublish": "node_modules/o-tools-livescript/bin/build",
     "test": "bin/spec"
   }
 }

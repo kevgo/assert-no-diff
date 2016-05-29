@@ -23,6 +23,7 @@ requiredModules:
     dev:
       - '{features,spec,test}/**/*'
       - '**/*{.,_,-}{spec,test}.ls'
+      - gulpfile.ls
     ignore:
       - 'node_modules/**/*'
     root: '**/*.ls'

@@ -12,7 +12,7 @@ Feature: asynchronous testing of hashes
 
 
 require! {
-  '..' : jsdiff-console
+  '../src/jsdiff-console' : jsdiff-console
   'chai' : {expect}
   'chalk' : {green, grey, red}
 }
