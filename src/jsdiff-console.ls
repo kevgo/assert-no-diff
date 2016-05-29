@@ -16,9 +16,15 @@ get-color = (part) ->
 module.exports = (actual, expected, done) ->
   | !actual    =>  throw new Error "JsDiffConsole: parameter 2 is falsy"
   | !expected  =>  throw new Error "JsDiffConsole: parameter 1 is falsy"
-  | !done      =>  done = output ; output = undefined
   differences = diff.diffJson expected, actual
   if differences.length is 1
-   done!
+    if done
+      done!
+    else
+      new Promise (fulfill, reject) -> fulfill!
   else
-    done "mismatching records:\n\n#{render-differences differences}"
+    if done
+      done "mismatching records:\n\n#{render-differences differences}"
+    else
+      new Promise (fulfill, reject) ->
+        reject "mismatching records:\n\n#{render-differences differences}"
