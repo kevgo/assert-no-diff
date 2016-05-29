@@ -116,20 +116,8 @@
     },
     "dependency-lint": {
       "version": "4.0.1",
-      "from": "dependency-lint@latest",
-      "resolved": "https://registry.npmjs.org/dependency-lint/-/dependency-lint-4.0.1.tgz",
-      "dependencies": {
-        "glob": {
-          "version": "7.0.3",
-          "from": "glob@>=7.0.0 <8.0.0",
-          "resolved": "https://registry.npmjs.org/glob/-/glob-7.0.3.tgz"
-        },
-        "minimatch": {
-          "version": "3.0.0",
-          "from": "minimatch@>=3.0.0 <4.0.0",
-          "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-3.0.0.tgz"
-        }
-      }
+      "from": "dependency-lint@4.0.1",
+      "resolved": "https://registry.npmjs.org/dependency-lint/-/dependency-lint-4.0.1.tgz"
     },
     "detective": {
       "version": "4.3.1",
@@ -204,9 +192,9 @@
       "resolved": "https://registry.npmjs.org/fs-extra/-/fs-extra-0.26.7.tgz"
     },
     "glob": {
-      "version": "3.2.11",
-      "from": "glob@3.2.11",
-      "resolved": "https://registry.npmjs.org/glob/-/glob-3.2.11.tgz"
+      "version": "7.0.3",
+      "from": "glob@>=7.0.0 <8.0.0",
+      "resolved": "https://registry.npmjs.org/glob/-/glob-7.0.3.tgz"
     },
     "graceful-fs": {
       "version": "4.1.4",
@@ -301,9 +289,9 @@
       "resolved": "https://registry.npmjs.org/memoizee/-/memoizee-0.3.10.tgz"
     },
     "minimatch": {
-      "version": "0.3.0",
-      "from": "minimatch@>=0.3.0 <0.4.0",
-      "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-0.3.0.tgz"
+      "version": "3.0.0",
+      "from": "minimatch@>=3.0.0 <4.0.0",
+      "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-3.0.0.tgz"
     },
     "minimist": {
       "version": "0.0.8",
@@ -330,6 +318,16 @@
           "from": "escape-string-regexp@1.0.2",
           "resolved": "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.2.tgz"
         },
+        "glob": {
+          "version": "3.2.11",
+          "from": "glob@3.2.11",
+          "resolved": "https://registry.npmjs.org/glob/-/glob-3.2.11.tgz"
+        },
+        "minimatch": {
+          "version": "0.3.0",
+          "from": "minimatch@>=0.3.0 <0.4.0",
+          "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-0.3.0.tgz"
+        },
         "supports-color": {
           "version": "1.2.0",
           "from": "supports-color@1.2.0",
@@ -348,9 +346,9 @@
       "resolved": "https://registry.npmjs.org/next-tick/-/next-tick-0.2.2.tgz"
     },
     "o-tools": {
-      "version": "0.3.4",
-      "from": "o-tools@0.3.4",
-      "resolved": "https://registry.npmjs.org/o-tools/-/o-tools-0.3.4.tgz",
+      "version": "0.4.0",
+      "from": "o-tools@0.4.0",
+      "resolved": "https://registry.npmjs.org/o-tools/-/o-tools-0.4.0.tgz",
       "dependencies": {
         "acorn": {
           "version": "1.2.2",
@@ -2136,19 +2134,7 @@
     "rimraf": {
       "version": "2.5.2",
       "from": "rimraf@>=2.2.8 <3.0.0",
-      "resolved": "https://registry.npmjs.org/rimraf/-/rimraf-2.5.2.tgz",
-      "dependencies": {
-        "glob": {
-          "version": "7.0.3",
-          "from": "glob@^7.0.0",
-          "resolved": "https://registry.npmjs.org/glob/-/glob-7.0.3.tgz"
-        },
-        "minimatch": {
-          "version": "3.0.0",
-          "from": "minimatch@2 || 3",
-          "resolved": "https://registry.npmjs.org/minimatch/-/minimatch-3.0.0.tgz"
-        }
-      }
+      "resolved": "https://registry.npmjs.org/rimraf/-/rimraf-2.5.2.tgz"
     },
     "semver": {
       "version": "5.1.0",
