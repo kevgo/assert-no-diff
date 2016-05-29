@@ -17,6 +17,7 @@ ignoreErrors:
   shouldBeDevDependency: []
   unused:
     - livescript
+    - coveralls
 
 requiredModules:
   files:
