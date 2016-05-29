@@ -6,7 +6,8 @@ Feature: testing with promises
   I want to be able to utilize my test framework's ability to handle promises
   So that I don't have to deal with async callbacks unnecessarily.
 
-  - call "jsdiff-console actual, expected" to have jsdiff return a promise
+  - call "jsdiff-console actual, expected" without a callback
+    to receive a promise with the test result
 
 */
 
