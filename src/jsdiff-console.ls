@@ -16,17 +16,12 @@ get-color = (part) ->
 module.exports = (actual, expected, done) ->
   | !actual    =>  throw new Error "JsDiffConsole: actual value not provided"
   | !expected  =>  throw new Error "JsDiffConsole: expected value not provided"
-  differences = diff.diffJson expected, actual
+  differences = diff.diff-json expected, actual
   if differences.length is 1
-    # actual == expected
-    if done
-      done!
-    else
-      Promise.resolve!
+    done?!
   else
-    # actual != expected
     error = "mismatching records:\n\n#{render-differences differences}"
     if done
       done error
     else
-      Promise.reject error
+      throw new Error error
