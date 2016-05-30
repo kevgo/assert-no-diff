@@ -1,10 +1,10 @@
 /*
 
-Feature: asynchronous testing of hashes
+Feature: asynchronous testing
 
-  As a developer dealing with hashes produced by my code
-  I want to be able to diff them against expected values asynchronously in my tests
-  So that verifying them in my asynchronous tests is easy and natural.
+  As a developer testing my code
+  I want to be able to verify complex values in async tests asynchronously
+  So that jsdiff-console calls the "done" method for me automatically.
 
   - call "jsdiff-console actual, expected, done" to diff the given hash asynchronously
 
@@ -18,7 +18,7 @@ require! {
 }
 
 
-describe 'async testing of hashes', ->
+describe 'asynchronous testing of data', ->
 
 
   context 'matching data', (...) ->
