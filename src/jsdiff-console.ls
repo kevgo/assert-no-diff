@@ -18,13 +18,15 @@ module.exports = (actual, expected, done) ->
   | !expected  =>  throw new Error "JsDiffConsole: expected value not provided"
   differences = diff.diffJson expected, actual
   if differences.length is 1
+    # actual == expected
     if done
       done!
     else
-      new Promise (fulfill, reject) -> fulfill!
+      Promise.resolve!
   else
+    # actual != expected
+    error = "mismatching records:\n\n#{render-differences differences}"
     if done
-      done "mismatching records:\n\n#{render-differences differences}"
+      done error
     else
-      new Promise (fulfill, reject) ->
-        reject "mismatching records:\n\n#{render-differences differences}"
+      Promise.reject error
