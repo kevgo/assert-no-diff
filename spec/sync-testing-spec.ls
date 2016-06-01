@@ -48,7 +48,7 @@ describe 'synchronous testing of data', ->
 
     it 'provides the diff in the exception message', ->
       expect(@exception.message).to.eql "
-        mismatching records:\n\n
+        Error: mismatching records:\n\n
         #{grey  '{\n'}
         #{red   '  "firstName": "Jean-Luc",\n'}
         #{green '  "firstName": "Captain",\n'}

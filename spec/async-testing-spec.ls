@@ -48,7 +48,7 @@ describe 'asynchronous testing of data', ->
         done!
 
     it 'calls the given callback with an error that includes the diff', ->
-      expect(@err).to.eql "
+      expect(@err.message).to.eql "
         mismatching records:\n\n
         #{grey  '{\n'}
         #{red   '  "firstName": "Jean-Luc",\n'}

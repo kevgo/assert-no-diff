@@ -20,7 +20,7 @@ module.exports = (actual, expected, done) ->
   if differences.length is 1
     done?!
   else
-    error = "mismatching records:\n\n#{render-differences differences}"
+    error = new Error "mismatching records:\n\n#{render-differences differences}"
     if done
       done error
     else
