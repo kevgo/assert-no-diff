@@ -21,6 +21,6 @@ diff(actual-json, expected-json, done)     // calls done when done comparing, wi
 
 ## Development
 
-* __run tests:__ `spec` (you need to have `watch` running for this)
-* __update dependencies:__ `update`
-* __deploy a new version:__ `publish <patch|minor|major>` (deployment happens via CI and might take a few minutes)
+* run tests: `spec` (you need to have `watch` running for this)
+* update dependencies: `update`
+* deploy a new version: `publish <patch|minor|major>` (deployment happens via CI and might take a few minutes)
