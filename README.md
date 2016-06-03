@@ -14,8 +14,8 @@ Using it in your tests is super easy:
 ```javascript
 diff = require('jsdiff-console')
 
-diff(actual-json, expected-json)           # throws on mismatch
-diff(actual-json, expected-json, done)     # calls done with error on mismatch
+diff(actual-json, expected-json)           // throws on mismatch
+diff(actual-json, expected-json, done)     // calls done with error on mismatch
 ```
 
 
