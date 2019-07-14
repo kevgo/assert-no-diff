@@ -16,8 +16,8 @@ help:   # prints all make targets
 	@cat Makefile | grep '^[^ ]*:' | grep -v '.PHONY' | grep -v help | sed 's/:.*#/#/' | column -s "#" -t
 
 lint:   # lints all files
-	# node_modules/.bin/tsc --noEmit
-	# node_modules/.bin/prettier -c "src/*.ts"
+	node_modules/.bin/tsc --noEmit
+	node_modules/.bin/prettier -c "src/*.ts"
 	node_modules/.bin/prettier -c "*.md"
 
 setup:   # sets up the installation on this machine
