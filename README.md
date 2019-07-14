@@ -7,20 +7,26 @@
 [![Dependency Status](https://david-dm.org/kevgo/jsdiff-console.svg)](https://david-dm.org/kevgo/jsdiff-console)
 [![devDependency Status](https://david-dm.org/kevgo/jsdiff-console/dev-status.svg)](https://david-dm.org/kevgo/jsdiff-console#info=devDependencies)
 
-This is a very simple helper method for tests that require
-diffing JSON data.
-It uses the excellent [jsdiff](https://github.com/kpdecker/jsdiff) module.
-Using it in your tests is super easy:
+This is a very simple helper method for printing the differences
+between two JSON or string variables to the console,
+for example in unit tests.
+It wraps the excellent [diff](https://github.com/kpdecker/jsdiff) module.
 
 ```javascript
-diff = require("jsdiff-console")
-
-diff(actualJson, expectedJson) // throws on mismatch
-diff(actualJson, expectedJson, done) // calls done when done comparing, with error
+jsdiff = require("jsdiff-console")
+jsdiff.sync(actualJson, expectedJson)
 ```
+
+If the two given values are different, `jsdiff.sync` throws an error
+with a console-formatted message.
+Your unit tests will fail with this error,
+causing your test runtime to fail the test and print the nicely readable diff of your objects.
 
 ## Development
 
-- run tests: `spec` (you need to have `watch` running for this)
-- update dependencies: `update`
-- deploy a new version: `publish <patch|minor|major>` (deployment happens via CI and might take a few minutes)
+- run all tests: `make test`
+- update dependencies: `make update`
+- see all available make commands: `make help`
+- deploy a new version:
+  - commit an update with new version in `package.json` on master
+  - run `npm publish`

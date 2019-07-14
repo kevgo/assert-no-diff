@@ -23,7 +23,7 @@ function getColor(part: diff.Change) {
  * Explode checks the two given Objects or strings for equality
  * and throws with the console formatted diff if there are any differences.
  */
-export function explode(actual: string | object, expected: string | object) {
+export function sync(actual: string | object, expected: string | object) {
   if (!actual) throw new Error("JsDiffConsole: actual value not provided")
   if (!expected) throw new Error("JsDiffConsole: expected value not provided")
 

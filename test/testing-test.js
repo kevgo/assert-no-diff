@@ -1,17 +1,17 @@
 // Note: this test needs to be a JS file
-//       so that we can call jsdiff.explode with the wrong number of arguments
+//       so that we can call jsdiff.sync with the wrong number of arguments
 
 const jsdiff = require("../src/jsdiff-console")
 const { expect } = require("chai")
 const chalk = require("chalk")
 
-describe("jsdiff.explode", function() {
+describe("jsdiff.sync", function() {
   it("returns normally for matching data", function() {
     const data = {
       firstName: "Jean-Luc",
       lastName: "Picard"
     }
-    jsdiff.explode(data, data)
+    jsdiff.sync(data, data)
   })
 
   it("throws with the console-formatted diff for mismatching data", function() {
@@ -24,7 +24,7 @@ describe("jsdiff.explode", function() {
       lastName: "Picard"
     }
     try {
-      jsdiff.explode(actual, expected)
+      jsdiff.sync(actual, expected)
     } catch (e) {
       // NOTE: the newlines are parts of the diff string,
       //       don't extract them into the string template
@@ -38,13 +38,13 @@ ${chalk.grey('  "lastName": "Picard"\n}')}`)
 
   it("throws with an error message when forgetting the expected value", function() {
     expect(function() {
-      jsdiff.explode("foo")
+      jsdiff.sync("foo")
     }).to.throw("expected value not provided")
   })
 
   it("throws with an error message when forgetting the actual value", function() {
     expect(function() {
-      jsdiff.explode()
+      jsdiff.sync()
     }).to.throw("actual value not provided")
   })
 })
