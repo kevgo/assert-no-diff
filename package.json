@@ -23,12 +23,12 @@
   "files": [
     "dist"
   ],
-  "homepage": "https://github.com/kevgo/jsdiff-console#readme",
+  "homepage": "https://github.com/kevgo/assert-no-diff#readme",
   "license": "ISC",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kevgo/jsdiff-console.git"
+    "url": "git+https://github.com/kevgo/assert-no-diff.git"
   },
   "scripts": {
     "prepublishOnly": "make build",

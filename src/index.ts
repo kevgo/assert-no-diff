@@ -3,7 +3,7 @@ import * as diff from "diff"
 
 /**
  * Chars checks the two given strings character-by-character for equality.
- * If there are any differences, it throws a console-colored diff message.
+ * If there are any differences, it throws an exception with a Bash-colored diff as the error message.
  */
 export function chars(
   actual: string,
@@ -11,10 +11,10 @@ export function chars(
   message = "mismatching strings"
 ) {
   if (!actual) {
-    throw new Error("JsDiffConsole: actual value not provided")
+    throw new Error("AssertNoDiff: actual value not provided")
   }
   if (!expected) {
-    throw new Error("JsDiffConsole: expected value not provided")
+    throw new Error("AssertNoDiff: expected value not provided")
   }
   const differences = diff.diffChars(expected, actual)
   if (differences.length > 1) {
@@ -24,7 +24,7 @@ export function chars(
 
 /**
  * Json checks the two given Objects for equality.
- * If there are any differences, it throws a console-colored diff message.
+ * If there are any differences, it throws an exception with a Bash-colored diff as the error message.
  */
 export function json(
   actual: object,
@@ -32,10 +32,10 @@ export function json(
   message = "mismatching objects"
 ) {
   if (!actual) {
-    throw new Error("JsDiffConsole: actual value not provided")
+    throw new Error("AssertNoDiff: actual value not provided")
   }
   if (!expected) {
-    throw new Error("JsDiffConsole: expected value not provided")
+    throw new Error("AssertNoDiff: expected value not provided")
   }
   const differences = diff.diffJson(expected, actual)
   if (differences.length > 1) {
@@ -46,7 +46,7 @@ export function json(
 /**
  * Chars checks the two given strings line-by-line for equality.
  * Extra whitespace is ignored.
- * If there are any differences, it throws a console-colored diff message.
+ * If there are any differences, it throws an exception with a Bash-colored diff as the error message.
  */
 export function trimmedLines(
   actual: string,
@@ -54,10 +54,10 @@ export function trimmedLines(
   message = "mismatching lines"
 ) {
   if (!actual) {
-    throw new Error("JsDiffConsole: actual value not provided")
+    throw new Error("AssertNoDiff: actual value not provided")
   }
   if (!expected) {
-    throw new Error("JsDiffConsole: expected value not provided")
+    throw new Error("AssertNoDiff: expected value not provided")
   }
   const differences = diff.diffTrimmedLines(expected, actual)
   if (differences.length > 1) {
@@ -68,7 +68,7 @@ export function trimmedLines(
 /**
  * WordsWithSpace checks the two given strings word-by-word for equality
  * treating whitespace as significant.
- * If there are any differences, it throws a console-colored diff message.
+ * If there are any differences, it throws an exception with a Bash-colored diff as the error message.
  */
 export function wordsWithSpace(
   actual: string,
@@ -76,10 +76,10 @@ export function wordsWithSpace(
   message = "mismatching words"
 ) {
   if (!actual) {
-    throw new Error("JsDiffConsole: actual value not provided")
+    throw new Error("AssertNoDiff: actual value not provided")
   }
   if (!expected) {
-    throw new Error("JsDiffConsole: expected value not provided")
+    throw new Error("AssertNoDiff: expected value not provided")
   }
   const differences = diff.diffWordsWithSpace(expected, actual)
   if (differences.length > 1) {
@@ -90,7 +90,7 @@ export function wordsWithSpace(
 /**
  * Chars checks the two given strings line-by-line for equality.
  * Extra whitespace is ignored.
- * If there are any differences, it throws a console-colored diff message.
+ * If there are any differences, it throws an exception with a Bash-colored diff as the error message.
  */
 // export function arrays(
 //   actual: Array<Object>,

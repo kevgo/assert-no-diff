@@ -3,10 +3,9 @@
 > Asserts the equality of JavaScript strings and objects with human-friendly,
 > Bash-colored diffs as error messages.
 
-[![CircleCI](https://circleci.com/gh/kevgo/jsdiff-console.svg?style=shield)](https://circleci.com/gh/kevgo/jsdiff-console)
-[![Coverage Status](https://coveralls.io/repos/github/kevgo/jsdiff-console/badge.svg?branch=master)](https://coveralls.io/github/kevgo/jsdiff-console?branch=master)
-[![Dependency Status](https://david-dm.org/kevgo/jsdiff-console.svg)](https://david-dm.org/kevgo/jsdiff-console)
-[![devDependency Status](https://david-dm.org/kevgo/jsdiff-console/dev-status.svg)](https://david-dm.org/kevgo/jsdiff-console#info=devDependencies)
+[![CircleCI](https://circleci.com/gh/kevgo/assert-no-diff.svg?style=shield)](https://circleci.com/gh/kevgo/assert-no-diff)
+[![Dependency Status](https://david-dm.org/kevgo/assert-no-diff.svg)](https://david-dm.org/kevgo/assert-no-diff)
+[![devDependency Status](https://david-dm.org/kevgo/assert-no-diff/dev-status.svg)](https://david-dm.org/kevgo/assert-no-diff#info=devDependencies)
 
 This library provides the JavaScript string and object diff methods of the
 popular [diff](https://github.com/kpdecker/jsdiff) library as assertions. The
@@ -15,9 +14,9 @@ expected values with human-friendly Bash-colored messages. This is useful for
 verifying the equality of larger strings or data structures in tests.
 
 ```javascript
-assertNoDiff = require("assert-no-diff")
+const assertNoDiff = require("assert-no-diff")
 
-// compare objects
+// assert no differences between two JavaScript objects
 assertNoDiff.json(actualJson, expectedJson)
 
 // compare strings and highlight the differences character-by-character
