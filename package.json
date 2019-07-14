@@ -14,13 +14,7 @@
     "chai": "4.2.0",
     "coveralls": "3.0.5",
     "dependency-lint": "6.0.0",
-    "gulp": "4.0.2",
-    "gulp-livescript-istanbul": "0.0.2",
-    "gulp-mocha": "6.0.0",
-    "livescript": "1.6.0",
     "mocha": "6.1.4",
-    "o-tools": "0.10.3",
-    "o-tools-livescript": "1.2.3",
     "prettier": "1.18.2",
     "ts-node": "8.3.0",
     "typescript": "3.5.3"
@@ -36,7 +30,7 @@
     "url": "git+https://github.com/kevgo/jsdiff-console.git"
   },
   "scripts": {
-    "prepublish": "node_modules/o-tools-livescript/bin/build",
-    "test": "bin/spec"
+    "prepublishOnly": "make build",
+    "test": "make test"
   }
 }
