@@ -3,8 +3,8 @@
   "version": "2.2.1",
   "author": "Kevin Goslar",
   "dependencies": {
-    "chalk": "^2.4.2",
-    "diff": "^4.0.1"
+    "chalk": "2.4.2",
+    "diff": "4.0.1"
   },
   "description": "Compares JS hashes using JsDiff and outputs the result on the console",
   "devDependencies": {
