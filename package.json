@@ -1,6 +1,6 @@
 {
   "name": "jsdiff-console",
-  "version": "2.2.1",
+  "version": "3.0.0",
   "author": "Kevin Goslar",
   "dependencies": {
     "chalk": "2.4.2",
