@@ -1,4 +1,5 @@
 # JsDiff with console output
+
 > Compares JS hashes using JsDiff and outputs the result on the console
 
 [![CircleCI](https://circleci.com/gh/kevgo/jsdiff-console.svg?style=shield)](https://circleci.com/gh/kevgo/jsdiff-console)
@@ -12,15 +13,14 @@ It uses the excellent [jsdiff](https://github.com/kpdecker/jsdiff) module.
 Using it in your tests is super easy:
 
 ```javascript
-diff = require('jsdiff-console')
+diff = require("jsdiff-console")
 
-diff(actual-json, expected-json)           // throws on mismatch
-diff(actual-json, expected-json, done)     // calls done when done comparing, with error
+diff(actualJson, expectedJson) // throws on mismatch
+diff(actualJson, expectedJson, done) // calls done when done comparing, with error
 ```
-
 
 ## Development
 
-* run tests: `spec` (you need to have `watch` running for this)
-* update dependencies: `update`
-* deploy a new version: `publish <patch|minor|major>` (deployment happens via CI and might take a few minutes)
+- run tests: `spec` (you need to have `watch` running for this)
+- update dependencies: `update`
+- deploy a new version: `publish <patch|minor|major>` (deployment happens via CI and might take a few minutes)
