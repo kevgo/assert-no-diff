@@ -17,8 +17,8 @@ help:   # prints all make targets
 
 lint:   # lints all files
 	# node_modules/.bin/tsc --noEmit
-	# node_modules/.bin/prettier -l "src/*.ts"
-	# node_modules/.bin/prettier -l "*.md"
+	# node_modules/.bin/prettier -c "src/*.ts"
+	node_modules/.bin/prettier -c "*.md"
 
 setup:   # sets up the installation on this machine
 	yarn install
