@@ -15,11 +15,9 @@ describe("jsdiff.json", function() {
 
     // NOTE: the newlines are parts of the diff string,
     //       don't extract them into the string template
-    const expected = `mismatching objects:\n
-${chalk.grey("{\n")}\
-${chalk.red('  "firstName": "Jean-Luc",\n')}\
-${chalk.green('  "firstName": "Captain",\n')}\
-${chalk.grey('  "lastName": "Picard"\n}')}`
+    const expected = chalk`mismatching objects:
+
+{grey \{\n}{red   "firstName": "Jean-Luc",\n}{green   "firstName": "Captain",\n}{grey   "lastName": "Picard"\n\}}`
     assert.throws(function() {
       jsdiff.json(obj2, obj1)
     }, new Error(expected))
