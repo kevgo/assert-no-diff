@@ -2,4 +2,4 @@
 set -e
 
 node_modules/o-tools/bin/lint
-mocha --compilers ls:livescript "**/*spec.ls"
+node_modules/.bin/mocha --compilers ls:livescript "**/*spec.ls"
