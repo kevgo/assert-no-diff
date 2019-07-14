@@ -7,20 +7,31 @@
 [![Dependency Status](https://david-dm.org/kevgo/jsdiff-console.svg)](https://david-dm.org/kevgo/jsdiff-console)
 [![devDependency Status](https://david-dm.org/kevgo/jsdiff-console/dev-status.svg)](https://david-dm.org/kevgo/jsdiff-console#info=devDependencies)
 
-This is a very simple helper method for printing the differences
-between two JSON or string variables to the console,
-for example in unit tests.
-It wraps the excellent [diff](https://github.com/kpdecker/jsdiff) module.
+This is a very simple helper method for printing the differences between two
+JSON or string variables to the console, for example in unit tests. It wraps the
+excellent [diff](https://github.com/kpdecker/jsdiff) module.
 
 ```javascript
 jsdiff = require("jsdiff-console")
-jsdiff.sync(actualJson, expectedJson)
+
+// compare objects
+jsdiff.json(actualJson, expectedJson)
+
+// compare strings and highlight the differences character-by-character
+jsdiff.chars(actualString, expectedString)
+
+// compare strings and highlight the mismatching words, whitespace-sensitive
+jsdiff.wordsWithSpace(actualString, expectedString)
+
+// compare strings and highlight the mismatching lines, ignoring whitespace around them
+jsdiff.trimmedLines(actualString, expectedString)
 ```
 
-If the two given values are different, `jsdiff.sync` throws an error
-with a console-formatted message.
-Your unit tests will fail with this error,
-causing your test runtime to fail the test and print the nicely readable diff of your objects.
+If the two given values are different, the `jsdiff` methods throw an error with
+a console-formatted message. This will cause your test runtime to fail the
+current unit test and print a nicely readable diff of your objects.
+
+You can provide a custom error message as an optional third parameter.
 
 ## Development
 
