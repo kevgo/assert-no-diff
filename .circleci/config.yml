@@ -1,18 +1,23 @@
-machine:
-  node:
-    version: 6.1.0
+version: 2
 
-test:
-  pre:
-    - node_modules/o-tools-livescript/bin/build
-
-  post:
-    - gulp coverage
-    - cat coverage/lcov.info  | ./node_modules/coveralls/bin/coveralls.js
-
-deployment:
-  publish:
-    branch: release
-    commands:
-      - npm set //registry.npmjs.org/:_authToken $AUTH_TOKEN
-      - npm publish
+jobs:
+  build:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - restore_cache:
+          name: restore Yarn cache
+          keys:
+            - yarn-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - yarn-{{ .Branch }}
+            - yarn-master
+            - yarn-
+      - run: yarn
+      - run: bin/spec
+      - save_cache:
+          name: save Yarn cache
+          key: yarn-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules/
