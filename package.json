@@ -1,12 +1,12 @@
 {
-  "name": "jsdiff-console",
+  "name": "assert-no-diff",
   "version": "3.0.1",
   "author": "Kevin Goslar",
   "dependencies": {
     "chalk": "2.4.2",
     "diff": "4.0.1"
   },
-  "description": "Compares JS hashes using JsDiff and outputs the result on the console",
+  "description": "Asserts the equality of JavaScript strings and objects with human-friendly, Bash-colored diffs as error messages",
   "devDependencies": {
     "@types/diff": "4.0.2",
     "@types/mocha": "5.2.7",
