@@ -11,8 +11,12 @@ export function wordsWithSpace(
   expected: string,
   message = "mismatching words"
 ) {
-  if (!actual) throw new Error("JsDiffConsole: actual value not provided")
-  if (!expected) throw new Error("JsDiffConsole: expected value not provided")
+  if (!actual) {
+    throw new Error("JsDiffConsole: actual value not provided")
+  }
+  if (!expected) {
+    throw new Error("JsDiffConsole: expected value not provided")
+  }
   const differences = diff.diffWordsWithSpace(expected, actual)
   if (differences.length > 1) {
     throw new Error(`${message}:\n\n${renderDiff(differences)}`)
