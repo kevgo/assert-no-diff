@@ -115,11 +115,12 @@ export function getColor(part: diff.Change) {
   return chalk.grey
 }
 
-// renderDiff renders the given diff into a string containing Bash colors.
+/** RenderDiff renders the given diff into a string containing Bash colors. */
 export function renderDiff(differences: diff.Change[]): string {
   let result = ""
   for (const part of differences) {
-    result += getColor(part)(part.value)
+    const color = getColor(part)
+    result += color(part.value)
   }
   return result
 }
