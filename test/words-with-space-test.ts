@@ -1,7 +1,7 @@
-import * as jsdiff from "../src"
 import assert from "assert"
 import chalk from "chalk"
 import stripAnsi from "strip-ansi"
+import * as jsdiff from "../src"
 
 describe("jsdiff.wordsWithSpace", function() {
   it("returns normally for matching data", function() {
