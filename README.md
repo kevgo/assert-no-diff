@@ -13,10 +13,10 @@ It uses the excellent [jsdiff](https://github.com/kpdecker/jsdiff) module.
 Using it in your tests is super easy:
 
 ```javascript
-diff = require("jsdiff-console");
+diff = require("jsdiff-console")
 
-diff(actualJson, expectedJson); // throws on mismatch
-diff(actualJson, expectedJson, done); // calls done when done comparing, with error
+diff(actualJson, expectedJson) // throws on mismatch
+diff(actualJson, expectedJson, done) // calls done when done comparing, with error
 ```
 
 ## Development
