@@ -1,33 +1,34 @@
-import chalk from "chalk";
-import diff from "diff";
+import chalk from "chalk"
+import * as diff from "diff"
 
-function renderDifferences(differences) {
-  let result = "";
-  for (const part in differences) {
-    const color = getColor(part);
-    result += color(part.value);
+function renderDifferences(differences: diff.Change[]): string {
+  let result = ""
+  for (const part of differences) {
+    result += getColor(part)(part.value)
   }
-  return result;
+  return result
 }
 
-function getColor(part) {
+function getColor(part: diff.Change) {
   if (part.added) {
-    return chalk.green;
+    return chalk.green
   }
   if (part.removed) {
-    return chalk.red;
+    return chalk.red
   }
-  return chalk.grey;
+  return chalk.grey
 }
 
-export async function color(actual, expected) {
-  if (!actual) throw new Error("JsDiffConsole: actual value not provided");
-  if (!expected) throw new Error("JsDiffConsole: expected value not provided");
+/**
+ * Explode checks the two given Objects or strings for equality
+ * and throws with the console formatted diff if there are any differences.
+ */
+export function explode(actual: string | object, expected: string | object) {
+  if (!actual) throw new Error("JsDiffConsole: actual value not provided")
+  if (!expected) throw new Error("JsDiffConsole: expected value not provided")
 
-  const differences = diff.diffJson(expected, actual);
-  if (differences.length === 1) {
-    return;
+  const differences = diff.diffJson(expected, actual)
+  if (differences.length > 1) {
+    throw new Error(`mismatching records:\n\n${renderDifferences(differences)}`)
   }
-
-  throw new Error("mismatching records:\n\n#{render-differences differences}");
 }

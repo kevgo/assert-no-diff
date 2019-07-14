@@ -26,8 +26,8 @@ setup:   # sets up the installation on this machine
 test: lint unit docs   # runs all tests
 .PHONY: test
 
-unit: # runs the tests
-	node_modules/.bin/mocha --compilers ls:livescript "**/*spec.ls"
+unit:   # runs the tests
+	node_modules/.bin/mocha "test/*-test.js"
 
 update:   # updates the dependencies to their latest versions
 	yarn upgrade --latest
