@@ -17,6 +17,7 @@ help:   # prints all make targets
 
 lint:   # lints all files
 	node_modules/.bin/tsc --noEmit
+	node_modules/.bin/tslint --project .
 	node_modules/.bin/prettier -c "src/*.ts"
 	node_modules/.bin/prettier -c "*.md"
 

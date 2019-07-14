@@ -24,8 +24,12 @@ function getColor(part: diff.Change) {
  * and throws with the console formatted diff if there are any differences.
  */
 export function sync(actual: string | object, expected: string | object) {
-  if (!actual) throw new Error("JsDiffConsole: actual value not provided")
-  if (!expected) throw new Error("JsDiffConsole: expected value not provided")
+  if (!actual) {
+    throw new Error("JsDiffConsole: actual value not provided")
+  }
+  if (!expected) {
+    throw new Error("JsDiffConsole: expected value not provided")
+  }
 
   const differences = diff.diffJson(expected, actual)
   if (differences.length > 1) {
