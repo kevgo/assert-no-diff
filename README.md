@@ -4,6 +4,7 @@
 > Bash-colored diffs as error messages.
 
 [![CircleCI](https://circleci.com/gh/kevgo/assert-no-diff.svg?style=shield)](https://circleci.com/gh/kevgo/assert-no-diff)
+[![Coverage Status](https://coveralls.io/repos/github/kevgo/assert-no-diff/badge.svg?branch=master)](https://coveralls.io/github/kevgo/assert-no-diff?branch=master)
 
 This library provides the JavaScript string and object diff methods of the
 popular [diff](https://github.com/kpdecker/jsdiff) library as assertions. The

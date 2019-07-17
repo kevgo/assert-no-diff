@@ -4,6 +4,10 @@ build: clean    # builds for the current platform
 clean:   # removes all build artifacts
 	@rm -rf dist
 
+coverage: # measures test coverage
+	@node_modules/.bin/nyc node_modules/.bin/mocha --require source-map-support/register test/*-test.ts
+	@node_modules/.bin/nyc report --reporter=text-lcov | node_modules/.bin/coveralls
+
 docs:   # runs the documentation tests
 	# node_modules/.bin/text-run --offline --format dot
 

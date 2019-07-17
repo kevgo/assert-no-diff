@@ -1,7 +1,7 @@
 import assert from "assert"
 import chalk from "chalk"
 import stripAnsi from "strip-ansi"
-import * as assertNoDiff from "../src"
+import * as assertNoDiff from "../src/index"
 
 describe("assertNoDiff.chars", function() {
   it("returns normally for matching data", function() {
