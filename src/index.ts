@@ -105,7 +105,7 @@ export function wordsWithSpace(
 // }
 
 /** GetColor returns the chalk function to render the given diff part. */
-export function getColor(part: diff.Change) {
+function getColor(part: diff.Change) {
   if (part.added) {
     return chalk.green
   }
@@ -116,7 +116,7 @@ export function getColor(part: diff.Change) {
 }
 
 /** RenderDiff renders the given diff into a string containing Bash colors. */
-export function renderDiff(differences: diff.Change[]): string {
+function renderDiff(differences: diff.Change[]): string {
   let result = ""
   for (const part of differences) {
     const color = getColor(part)
