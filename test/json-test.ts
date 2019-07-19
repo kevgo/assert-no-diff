@@ -44,4 +44,7 @@ describe("assertNoDiff.json", function() {
     }
     throw new Error("assertNoDiff.json didn't throw")
   })
+  it("allows diffing empty objects", function() {
+    assertNoDiff.json({}, {})
+  })
 })

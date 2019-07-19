@@ -51,4 +51,8 @@ describe("assertNoDiff.trimmedLines", function() {
     }
     throw new Error("assertNoDiff.trimmedLines didn't throw")
   })
+
+  it("allows diffing against empty strings", function() {
+    assertNoDiff.trimmedLines("", "")
+  })
 })
