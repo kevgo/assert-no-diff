@@ -10,10 +10,10 @@ export function chars(
   expected: string,
   message = "mismatching strings"
 ) {
-  if (!actual) {
+  if (actual == null) {
     throw new Error("AssertNoDiff: actual value not provided")
   }
-  if (!expected) {
+  if (expected == null) {
     throw new Error("AssertNoDiff: expected value not provided")
   }
   const differences = diff.diffChars(expected, actual)
@@ -53,10 +53,10 @@ export function trimmedLines(
   expected: string,
   message = "mismatching lines"
 ) {
-  if (!actual) {
+  if (actual == null) {
     throw new Error("AssertNoDiff: actual value not provided")
   }
-  if (!expected) {
+  if (expected == null) {
     throw new Error("AssertNoDiff: expected value not provided")
   }
   const differences = diff.diffTrimmedLines(expected, actual)
@@ -75,10 +75,10 @@ export function wordsWithSpace(
   expected: string,
   message = "mismatching words"
 ) {
-  if (!actual) {
+  if (actual == null) {
     throw new Error("AssertNoDiff: actual value not provided")
   }
-  if (!expected) {
+  if (expected == null) {
     throw new Error("AssertNoDiff: expected value not provided")
   }
   const differences = diff.diffWordsWithSpace(expected, actual)

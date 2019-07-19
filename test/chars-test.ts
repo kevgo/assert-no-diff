@@ -44,4 +44,8 @@ describe("assertNoDiff.chars", function() {
     }
     throw new Error("assertNoDiff.chars didn't throw")
   })
+
+  it("allows diffing against empty strings", function() {
+    assertNoDiff.chars("", "")
+  })
 })

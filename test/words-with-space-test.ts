@@ -56,4 +56,8 @@ describe("assertNoDiff.wordsWithSpace", function() {
     }
     throw new Error("assertNoDiff.wordsWithSpace didn't throw")
   })
+
+  it("allows diffing against empty strings", function() {
+    assertNoDiff.wordsWithSpace("", "")
+  })
 })
