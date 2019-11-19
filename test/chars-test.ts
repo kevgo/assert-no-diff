@@ -27,14 +27,14 @@ test("mismatching data", function() {
 
 test("no expected value", function() {
   assert.throws(function() {
-    // @ts-ignore
+    // @ts-ignore: intentional call without second argument
     assertNoDiff.chars("foo")
   }, new Error("AssertNoDiff: expected value not provided"))
 })
 
 test("no actual value", function() {
   assert.throws(function() {
-    // @ts-ignore
+    // @ts-ignore: intentional call without arguments
     assertNoDiff.chars()
   }, new Error("AssertNoDiff: actual value not provided"))
 })
