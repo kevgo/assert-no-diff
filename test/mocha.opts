@@ -1,3 +1,4 @@
 --colors
 --require ts-node/register
 --bail
+--ui qunit
