@@ -5,11 +5,7 @@ import * as diff from "diff"
  * Chars checks the two given strings character-by-character for equality.
  * If there are any differences, it throws an exception with a Bash-colored diff as the error message.
  */
-export function chars(
-  actual: string,
-  expected: string,
-  message = "mismatching strings"
-) {
+export function chars(actual: string, expected: string, message = "mismatching strings") {
   if (actual == null) {
     throw new Error("AssertNoDiff: actual value not provided")
   }
@@ -26,11 +22,7 @@ export function chars(
  * Json checks the two given Objects for equality.
  * If there are any differences, it throws an exception with a Bash-colored diff as the error message.
  */
-export function json(
-  actual: object,
-  expected: object,
-  message = "mismatching objects"
-) {
+export function json(actual: object, expected: object, message = "mismatching objects") {
   if (!actual) {
     throw new Error("AssertNoDiff: actual value not provided")
   }
@@ -48,11 +40,7 @@ export function json(
  * Extra whitespace is ignored.
  * If there are any differences, it throws an exception with a Bash-colored diff as the error message.
  */
-export function trimmedLines(
-  actual: string,
-  expected: string,
-  message = "mismatching lines"
-) {
+export function trimmedLines(actual: string, expected: string, message = "mismatching lines") {
   if (actual == null) {
     throw new Error("AssertNoDiff: actual value not provided")
   }
@@ -70,11 +58,7 @@ export function trimmedLines(
  * treating whitespace as significant.
  * If there are any differences, it throws an exception with a Bash-colored diff as the error message.
  */
-export function wordsWithSpace(
-  actual: string,
-  expected: string,
-  message = "mismatching words"
-) {
+export function wordsWithSpace(actual: string, expected: string, message = "mismatching words") {
   if (actual == null) {
     throw new Error("AssertNoDiff: actual value not provided")
   }
