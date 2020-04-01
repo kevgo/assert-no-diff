@@ -13,7 +13,6 @@
     "@types/mocha": "7.0.2",
     "@types/node": "13.9.8",
     "coveralls": "3.0.11",
-    "dependency-lint": "6.0.0",
     "mocha": "7.1.1",
     "nyc": "15.0.0",
     "prettier": "1.19.1",
