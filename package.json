@@ -23,7 +23,9 @@
     "tslint": "6.1.0",
     "typescript": "3.8.3"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "homepage": "https://github.com/kevgo/assert-no-diff#readme",
   "license": "ISC",
   "main": "dist/index.js",
