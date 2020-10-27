@@ -2,7 +2,7 @@ import chalk from "chalk"
 import * as diff from "diff"
 
 /**
- * Chars checks the two given strings character-by-character for equality.
+ * Checks the two given strings character-by-character for equality.
  * If there are any differences, it throws an exception with a Bash-colored diff as the error message.
  */
 export function chars(actual: string, expected: string, message = "mismatching strings") {
@@ -19,7 +19,7 @@ export function chars(actual: string, expected: string, message = "mismatching s
 }
 
 /**
- * Json checks the two given Objects for equality.
+ * Checks the two given Objects for equality.
  * If there are any differences, it throws an exception with a Bash-colored diff as the error message.
  */
 export function json(actual: object, expected: object, message = "mismatching objects") {
@@ -36,7 +36,7 @@ export function json(actual: object, expected: object, message = "mismatching ob
 }
 
 /**
- * Chars checks the two given strings line-by-line for equality.
+ * Checks the two given strings line-by-line for equality.
  * Extra whitespace is ignored.
  * If there are any differences, it throws an exception with a Bash-colored diff as the error message.
  */
@@ -54,8 +54,7 @@ export function trimmedLines(actual: string, expected: string, message = "mismat
 }
 
 /**
- * WordsWithSpace checks the two given strings word-by-word for equality
- * treating whitespace as significant.
+ * Checks the two given strings word-by-word for equality treating whitespace as significant.
  * If there are any differences, it throws an exception with a Bash-colored diff as the error message.
  */
 export function wordsWithSpace(actual: string, expected: string, message = "mismatching words") {
@@ -88,7 +87,7 @@ export function wordsWithSpace(actual: string, expected: string, message = "mism
 //   }
 // }
 
-/** GetColor returns the chalk function to render the given diff part. */
+/** returns the chalk function to render the given diff part */
 function getColor(part: diff.Change) {
   if (part.added) {
     return chalk.green
@@ -99,7 +98,7 @@ function getColor(part: diff.Change) {
   return chalk.grey
 }
 
-/** RenderDiff renders the given diff into a string containing Bash colors. */
+/** renders the given diff into a string containing Bash colors */
 function renderDiff(differences: diff.Change[]): string {
   let result = ""
   for (const part of differences) {
