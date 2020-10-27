@@ -1,6 +1,8 @@
 import chalk from "chalk"
 import * as diff from "diff"
 
+console.log(4444444);
+
 /**
  * Chars checks the two given strings character-by-character for equality.
  * If there are any differences, it throws an exception with a Bash-colored diff as the error message.
