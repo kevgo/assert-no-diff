@@ -13,9 +13,7 @@ docs:   # runs the documentation tests
 
 fix:
 	${CURDIR}/node_modules/.bin/eslint . --ext .ts --fix
-	prettier --write src/*.ts
-	prettier --write test/*.ts
-	prettier --write *.md
+	prettier --write .
 
 help:   # prints all make targets
 	@cat Makefile | grep '^[^ ]*:' | grep -v '.PHONY' | grep -v help | sed 's/:.*#/#/' | column -s "#" -t
@@ -23,9 +21,7 @@ help:   # prints all make targets
 lint:   # lints all files
 	node_modules/.bin/tsc --noEmit
 	${CURDIR}/node_modules/.bin/eslint --ext .ts .
-	node_modules/.bin/prettier -c "src/*.ts"
-	node_modules/.bin/prettier -c "test/*.ts"
-	node_modules/.bin/prettier -c "*.md"
+	node_modules/.bin/prettier -c .
 
 setup:   # sets up the installation on this machine
 	yarn install
