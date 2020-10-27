@@ -34,7 +34,7 @@ test: lint unit docs   # runs all tests
 .PHONY: test
 
 unit:   # runs the tests
-	@node_modules/.bin/mocha test/*-test.ts
+	@node_modules/.bin/mocha test/*.test.ts
 
 update:   # updates the dependencies to their latest versions
 	yarn upgrade --latest
