@@ -22,7 +22,7 @@ help:   # prints all make targets
 
 lint:   # lints all files
 	node_modules/.bin/tsc --noEmit
-	${CURDIR}/node_modules/.bin/eslint -c .eslintrc.json --ext .ts .
+	${CURDIR}/node_modules/.bin/eslint --ext .ts .
 	node_modules/.bin/prettier -c "src/*.ts"
 	node_modules/.bin/prettier -c "test/*.ts"
 	node_modules/.bin/prettier -c "*.md"
