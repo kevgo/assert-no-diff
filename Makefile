@@ -12,7 +12,7 @@ docs:   # runs the documentation tests
 	# node_modules/.bin/text-run --offline --format dot
 
 fix:
-	tslint --project tsconfig.json --fix
+	${CURDIR}/node_modules/.bin/eslint . --ext .ts --fix
 	prettier --write src/*.ts
 	prettier --write test/*.ts
 	prettier --write *.md
