@@ -12,7 +12,7 @@ docs:   # runs the documentation tests
 	# node_modules/.bin/text-run --offline --format dot
 
 fix:
-	tslint --project tsconfig.json --fix
+	${CURDIR}/node_modules/.bin/eslint . --ext .ts --fix
 	prettier --write src/*.ts
 	prettier --write test/*.ts
 	prettier --write *.md
@@ -22,7 +22,7 @@ help:   # prints all make targets
 
 lint:   # lints all files
 	node_modules/.bin/tsc --noEmit
-	node_modules/.bin/tslint --project .
+	${CURDIR}/node_modules/.bin/eslint --ext .ts .
 	node_modules/.bin/prettier -c "src/*.ts"
 	node_modules/.bin/prettier -c "test/*.ts"
 	node_modules/.bin/prettier -c "*.md"

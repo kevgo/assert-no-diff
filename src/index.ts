@@ -5,7 +5,7 @@ import * as diff from "diff"
  * Checks the two given strings character-by-character for equality.
  * If there are any differences, it throws an exception with a Bash-colored diff as the error message.
  */
-export function chars(actual: string, expected: string, message = "mismatching strings") {
+export function chars(actual: string, expected: string, message = "mismatching strings"): void {
   if (actual == null) {
     throw new Error("AssertNoDiff: actual value not provided")
   }
@@ -22,7 +22,11 @@ export function chars(actual: string, expected: string, message = "mismatching s
  * Checks the two given Objects for equality.
  * If there are any differences, it throws an exception with a Bash-colored diff as the error message.
  */
-export function json(actual: object, expected: object, message = "mismatching objects") {
+export function json(
+  actual: Record<string, unknown>,
+  expected: Record<string, unknown>,
+  message = "mismatching objects"
+): void {
   if (!actual) {
     throw new Error("AssertNoDiff: actual value not provided")
   }
@@ -40,7 +44,7 @@ export function json(actual: object, expected: object, message = "mismatching ob
  * Extra whitespace is ignored.
  * If there are any differences, it throws an exception with a Bash-colored diff as the error message.
  */
-export function trimmedLines(actual: string, expected: string, message = "mismatching lines") {
+export function trimmedLines(actual: string, expected: string, message = "mismatching lines"): void {
   if (actual == null) {
     throw new Error("AssertNoDiff: actual value not provided")
   }
@@ -57,7 +61,7 @@ export function trimmedLines(actual: string, expected: string, message = "mismat
  * Checks the two given strings word-by-word for equality treating whitespace as significant.
  * If there are any differences, it throws an exception with a Bash-colored diff as the error message.
  */
-export function wordsWithSpace(actual: string, expected: string, message = "mismatching words") {
+export function wordsWithSpace(actual: string, expected: string, message = "mismatching words"): void {
   if (actual == null) {
     throw new Error("AssertNoDiff: actual value not provided")
   }
