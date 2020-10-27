@@ -5,30 +5,30 @@ import * as assertNoDiff from "../src/index"
 
 suite("assertNoDiff.wordsWithSpace")
 
-test("matching data", function() {
+test("matching data", function () {
   const data = "Jean-Luc Picard"
   assertNoDiff.wordsWithSpace(data, data)
 })
 
-test("mismatching data", function() {
+test("mismatching data", function () {
   const obj1 = "Jean-Luc Picard"
   const obj2 = "Captain Picard"
   const expected = chalk`mismatching words:
 
 {red Jean-Luc}{green Captain}{grey  Picard}`
-  assert.throws(function() {
+  assert.throws(function () {
     assertNoDiff.wordsWithSpace(obj2, obj1)
   }, new Error(expected))
 })
 
-test("extra whitespace", function() {
+test("extra whitespace", function () {
   const obj1 = "foo bar"
   const obj2 = " foo bar"
   const expected = chalk`mismatching words:
 
 {green  }{grey foo bar}`
   assert.throws(
-    function() {
+    function () {
       assertNoDiff.wordsWithSpace(obj2, obj1)
     },
     new Error(expected),
@@ -36,21 +36,21 @@ test("extra whitespace", function() {
   )
 })
 
-test("no expected value", function() {
-  assert.throws(function() {
+test("no expected value", function () {
+  assert.throws(function () {
     // @ts-ignore
     assertNoDiff.wordsWithSpace("foo")
   }, new Error("AssertNoDiff: expected value not provided"))
 })
 
-test("no actual value", function() {
-  assert.throws(function() {
+test("no actual value", function () {
+  assert.throws(function () {
     // @ts-ignore
     assertNoDiff.wordsWithSpace()
   }, new Error("AssertNoDiff: actual value not provided"))
 })
 
-test("custom error message", function() {
+test("custom error message", function () {
   try {
     assertNoDiff.wordsWithSpace("one", "two", "custom message")
   } catch (e) {
@@ -61,6 +61,6 @@ test("custom error message", function() {
   throw new Error("assertNoDiff.wordsWithSpace didn't throw")
 })
 
-test("empty strings", function() {
+test("empty strings", function () {
   assertNoDiff.wordsWithSpace("", "", "should allow diffing empty strings")
 })
