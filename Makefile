@@ -12,21 +12,24 @@ docs:   # runs the documentation tests
 	# node_modules/.bin/text-run --offline --format dot
 
 fix:
+	${CURDIR}/node_modules/.bin/prettier --write . &
 	${CURDIR}/node_modules/.bin/eslint . --ext .ts --fix
-	${CURDIR}/node_modules/.bin/prettier --write .
 
 help:   # prints all make targets
 	cat Makefile | grep '^[^ ]*:' | grep -v '.PHONY' | grep -v help | sed 's/:.*#/#/' | column -s "#" -t
 
 lint:   # lints all files
+	${CURDIR}/node_modules/.bin/eslint --ext .ts . &
+	${CURDIR}/node_modules/.bin/prettier -c . &
 	${CURDIR}/node_modules/.bin/tsc --noEmit
-	${CURDIR}/node_modules/.bin/eslint --ext .ts .
-	${CURDIR}/node_modules/.bin/prettier -c .
 
 setup:   # sets up the installation on this machine
 	yarn install
 
-test: lint unit docs   # runs all tests
+test:  # runs all tests
+	make unit &
+	make docs &
+	make lint
 .PHONY: test
 
 unit:   # runs the tests
