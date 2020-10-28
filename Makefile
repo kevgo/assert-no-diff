@@ -20,7 +20,7 @@ help:   # prints all make targets
 
 lint:   # lints all files
 	${CURDIR}/node_modules/.bin/eslint --ext .ts . &
-	${CURDIR}/node_modules/.bin/prettier -c . &
+	${CURDIR}/node_modules/.bin/prettier --list-different . &
 	${CURDIR}/node_modules/.bin/tsc --noEmit
 
 setup:   # sets up the installation on this machine
