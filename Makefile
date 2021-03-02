@@ -27,9 +27,9 @@ setup:   # sets up the installation on this machine
 	yarn install
 
 test:  # runs all tests
-	make unit &
-	make docs &
-	make lint
+	make --no-print-directory unit &
+	make --no-print-directory docs &
+	make --no-print-directory lint
 .PHONY: test
 
 unit:   # runs the tests
