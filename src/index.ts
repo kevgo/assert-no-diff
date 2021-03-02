@@ -23,8 +23,8 @@ export function chars(actual: string, expected: string, message = "mismatching s
  * If there are any differences, it throws an exception with a Bash-colored diff as the error message.
  */
 export function json(
-  actual: Record<string, unknown>,
-  expected: Record<string, unknown>,
+  actual: Record<string, unknown> | string[],
+  expected: Record<string, unknown> | string[],
   message = "mismatching objects"
 ): void {
   if (!actual) {
