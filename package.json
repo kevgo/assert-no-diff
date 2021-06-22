@@ -3,27 +3,27 @@
   "version": "3.0.6",
   "author": "Kevin Goslar",
   "dependencies": {
-    "chalk": "4.1.0",
-    "diff": "4.0.2"
+    "chalk": "4.1.1",
+    "diff": "5.0.0"
   },
   "description": "Asserts the equality of JavaScript strings and objects with human-friendly, Bash-colored diffs as error messages",
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "1.0.1",
-    "@types/diff": "4.0.2",
-    "@types/mocha": "8.0.3",
-    "@types/node": "14.14.5",
-    "@typescript-eslint/eslint-plugin": "4.6.0",
-    "@typescript-eslint/parser": "4.6.0",
+    "@types/diff": "5.0.0",
+    "@types/mocha": "8.2.2",
+    "@types/node": "15.12.4",
+    "@typescript-eslint/eslint-plugin": "4.28.0",
+    "@typescript-eslint/parser": "4.28.0",
     "coveralls": "3.1.0",
-    "eslint": "7.12.1",
-    "eslint-config-prettier": "6.15.0",
-    "mocha": "8.2.0",
+    "eslint": "7.29.0",
+    "eslint-config-prettier": "8.3.0",
+    "mocha": "9.0.1",
     "nyc": "15.1.0",
-    "prettier": "2.1.2",
+    "prettier": "2.3.1",
     "source-map-support": "0.5.19",
     "strip-ansi": "6.0.0",
-    "ts-node": "9.0.0",
-    "typescript": "4.0.5"
+    "ts-node": "10.0.0",
+    "typescript": "4.3.4"
   },
   "files": [
     "dist"
