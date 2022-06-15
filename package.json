@@ -1,12 +1,26 @@
 {
   "name": "assert-no-diff",
   "version": "3.0.6",
+  "description": "Asserts the equality of JavaScript strings and objects with human-friendly, Bash-colored diffs as error messages",
+  "homepage": "https://github.com/kevgo/assert-no-diff#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevgo/assert-no-diff.git"
+  },
+  "license": "ISC",
   "author": "Kevin Goslar",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepublishOnly": "make build",
+    "test": "make test"
+  },
   "dependencies": {
     "chalk": "4.1.1",
     "diff": "5.0.0"
   },
-  "description": "Asserts the equality of JavaScript strings and objects with human-friendly, Bash-colored diffs as error messages",
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "1.0.1",
     "@types/diff": "5.0.0",
@@ -20,23 +34,10 @@
     "mocha": "9.0.1",
     "nyc": "15.1.0",
     "prettier": "2.3.1",
+    "sort-package-json": "1.57.0",
     "source-map-support": "0.5.19",
     "strip-ansi": "6.0.0",
     "ts-node": "10.0.0",
     "typescript": "4.3.4"
-  },
-  "files": [
-    "dist"
-  ],
-  "homepage": "https://github.com/kevgo/assert-no-diff#readme",
-  "license": "ISC",
-  "main": "dist/index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kevgo/assert-no-diff.git"
-  },
-  "scripts": {
-    "prepublishOnly": "make build",
-    "test": "make test"
   }
 }

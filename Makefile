@@ -14,6 +14,7 @@ docs:   # runs the documentation tests
 fix:
 	${CURDIR}/node_modules/.bin/prettier --write . &
 	${CURDIR}/node_modules/.bin/eslint . --ext .ts --fix
+	${CURDIR}/node_modules/.bin/sort-package-json
 
 help:   # prints all make targets
 	cat Makefile | grep '^[^ ]*:' | grep -v '.PHONY' | grep -v help | sed 's/:.*#/#/' | column -s "#" -t
@@ -22,6 +23,7 @@ lint:   # lints all files
 	${CURDIR}/node_modules/.bin/eslint --ext .ts . &
 	${CURDIR}/node_modules/.bin/prettier --list-different . &
 	${CURDIR}/node_modules/.bin/tsc --noEmit
+	${CURDIR}/node_modules/.bin/sort-package-json --check
 
 setup:   # sets up the installation on this machine
 	yarn install
