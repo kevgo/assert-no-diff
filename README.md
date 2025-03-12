@@ -33,8 +33,7 @@ You can provide a custom error message as an optional third parameter.
 
 ## Development
 
-- run all tests: `make test`
-- see all available make commands: `make help`
+- run all tests: `npm run test`
 - deploy a new version:
   - update `package.json` to the new version and commit to master
   - run `npm publish`

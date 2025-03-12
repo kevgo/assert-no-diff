@@ -11,9 +11,9 @@ jobs:
           name: restore npm cache
           keys:
             - npm-{{ .Branch }}-{{ checksum "package-lock.json" }}
-      - run: make setup
-      - run: make test
-      - run: make coverage
+      - run: npm run setup
+      - run: npm run test
+      - run: npm run coverage
       - save_cache:
           name: save npm cache
           key: npm-{{ .Branch }}-{{ checksum "package-lock.json" }}
