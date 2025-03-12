@@ -18,7 +18,7 @@
     "clean": "rm -rf dist",
     "coverage": "node --test --import tsx --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=lcov.info -- test/*.test.ts",
     "doc": "text-runner",
-    "fix": "prettier --write . && eslint . --ext .ts --fix && sort-package-json --quiet",
+    "fix": "prettier --write . && eslint . --ext .ts --fix && sort-package-json",
     "lint": "eslint --ext .ts . && prettier --list-different . && tsc --noEmit && sort-package-json --check",
     "prepublishOnly": "tsc",
     "setup": "npm install",
