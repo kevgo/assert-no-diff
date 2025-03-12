@@ -17,7 +17,7 @@
     "build": "tsc",
     "clean": "rm -rf dist",
     "coverage": "node --test --import tsx --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=lcov.info -- test/*.test.ts",
-    "doc": "",
+    "doc": "text-runner",
     "fix": "prettier --write . && eslint . --ext .ts --fix && sort-package-json --quiet",
     "lint": "eslint --ext .ts . && prettier --list-different . && tsc --noEmit && sort-package-json --check",
     "prepublishOnly": "tsc",
@@ -46,6 +46,8 @@
     "sort-package-json": "1.57.0",
     "source-map-support": "0.5.19",
     "strip-ansi": "6.0.0",
+    "text-runner": "^7.1.0",
+    "textrun-npm": "^0.3.0",
     "ts-node": "10.0.0",
     "typescript": "4.3.4"
   }
