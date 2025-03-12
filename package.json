@@ -27,7 +27,7 @@
     "update": "npm-check-updates -u && npm install"
   },
   "dependencies": {
-    "chalk": "4.1.1",
+    "colorette": "2.0.20",
     "diff": "5.0.0"
   },
   "devDependencies": {
