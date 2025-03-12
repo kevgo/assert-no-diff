@@ -3,7 +3,7 @@
 > Asserts the equality of JavaScript strings and objects with human-friendly,
 > Bash-colored diffs as error messages.
 
-![test status](https://github.com/kevgo/assert-no-diff/actions/workflows/tests.yml/badge.svg)
+[![tests](https://github.com/kevgo/assert-no-diff/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/kevgo/assert-no-diff/actions/workflows/tests.yml)
 [![Code Coverage](https://coveralls.io/repos/github/kevgo/assert-no-diff/badge.svg?branch=main)](https://coveralls.io/github/kevgo/assert-no-diff?branch=main)
 [![0 dependencies](https://img.shields.io/badge/dependencies-2-brightgreen.svg)](https://github.com/kevgo/assert-no-diff/blob/main/package.json)
 [![install size](https://packagephobia.now.sh/badge?p=assert-no-diff)](https://packagephobia.now.sh/result?assert-no-diff)
