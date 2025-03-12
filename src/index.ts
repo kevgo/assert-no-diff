@@ -9,7 +9,7 @@ export function chars(
   actual: string,
   expected: string,
   message = "mismatching strings",
-): void {
+) {
   if (actual == null) {
     throw new Error("AssertNoDiff: actual value not provided")
   }
@@ -30,7 +30,7 @@ export function json(
   actual: Record<string, unknown> | string[],
   expected: Record<string, unknown> | string[],
   message = "mismatching objects",
-): void {
+) {
   if (!actual) {
     throw new Error("AssertNoDiff: actual value not provided")
   }
@@ -52,7 +52,7 @@ export function trimmedLines(
   actual: string,
   expected: string,
   message = "mismatching lines",
-): void {
+) {
   if (actual == null) {
     throw new Error("AssertNoDiff: actual value not provided")
   }
@@ -73,7 +73,7 @@ export function wordsWithSpace(
   actual: string,
   expected: string,
   message = "mismatching words",
-): void {
+) {
   if (actual == null) {
     throw new Error("AssertNoDiff: actual value not provided")
   }
