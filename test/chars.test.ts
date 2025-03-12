@@ -21,7 +21,7 @@ suite("assertNoDiff.chars()", function() {
         assertNoDiff.chars(obj2, obj1)
       },
       new Error(expected),
-      "should throw color-coded diff",
+      "should throw color-coded diff"
     )
   })
 

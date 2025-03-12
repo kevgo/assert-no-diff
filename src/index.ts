@@ -8,7 +8,7 @@ import * as diff from "diff"
 export function chars(
   actual: string,
   expected: string,
-  message = "mismatching strings",
+  message = "mismatching strings"
 ) {
   if (actual == null) {
     throw new Error("AssertNoDiff: actual value not provided")
@@ -29,7 +29,7 @@ export function chars(
 export function json(
   actual: Record<string, unknown> | string[],
   expected: Record<string, unknown> | string[],
-  message = "mismatching objects",
+  message = "mismatching objects"
 ) {
   if (!actual) {
     throw new Error("AssertNoDiff: actual value not provided")
@@ -51,7 +51,7 @@ export function json(
 export function trimmedLines(
   actual: string,
   expected: string,
-  message = "mismatching lines",
+  message = "mismatching lines"
 ) {
   if (actual == null) {
     throw new Error("AssertNoDiff: actual value not provided")
@@ -72,7 +72,7 @@ export function trimmedLines(
 export function wordsWithSpace(
   actual: string,
   expected: string,
-  message = "mismatching words",
+  message = "mismatching words"
 ) {
   if (actual == null) {
     throw new Error("AssertNoDiff: actual value not provided")

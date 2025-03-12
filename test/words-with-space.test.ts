@@ -32,7 +32,7 @@ suite("assertNoDiff.wordsWithSpace", function() {
         assertNoDiff.wordsWithSpace(obj2, obj1)
       },
       new Error(expected),
-      "should not tolerate surrounding whitespace",
+      "should not tolerate surrounding whitespace"
     )
   })
 

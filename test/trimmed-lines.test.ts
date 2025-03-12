@@ -16,7 +16,7 @@ suite("assertNoDiff.trimmedLines", function() {
     assertNoDiff.trimmedLines(
       obj2,
       obj1,
-      "should ignore surrounding whitespace",
+      "should ignore surrounding whitespace"
     )
   })
 
