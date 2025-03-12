@@ -22,7 +22,7 @@
     "lint": "eslint --ext .ts . && prettier --list-different . && tsc --noEmit && sort-package-json --check",
     "prepublishOnly": "tsc",
     "setup": "npm install",
-    "test": "npm run fix && npm run lint && npm run unit && npm run doc",
+    "test": "npm run lint && npm run unit && npm run doc",
     "unit": "mocha test/*.test.ts",
     "update": "npm-check-updates -u && npm install"
   },
