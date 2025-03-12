@@ -26,7 +26,7 @@ lint:   # lints all files
 	${CURDIR}/node_modules/.bin/sort-package-json --check
 
 setup:   # sets up the installation on this machine
-	yarn install
+	npm install
 
 test:  # runs all tests
 	make --no-print-directory unit &
@@ -38,6 +38,6 @@ unit:   # runs the tests
 	${CURDIR}/node_modules/.bin/mocha test/*.test.ts
 
 update:   # updates the dependencies to their latest versions
-	yarn upgrade --latest
+	npm exec -- npm-check-updates -u && npm install
 
 .SILENT:
