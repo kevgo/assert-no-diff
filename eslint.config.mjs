@@ -17,7 +17,7 @@ export default [
       },
       parser: tsParser,
       parserOptions: {
-        project: "./tsconfig-build.json"
+        project: "./tsconfig.json"
       },
       sourceType: "module"
     },
