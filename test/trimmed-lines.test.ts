@@ -1,4 +1,5 @@
-import { strict as assert } from "assert"
+import assert from "node:assert/strict"
+import { suite, test } from "node:test"
 import chalk from "chalk"
 import stripAnsi from "strip-ansi"
 import * as assertNoDiff from "../src/index"
