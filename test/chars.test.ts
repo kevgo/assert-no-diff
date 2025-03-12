@@ -5,7 +5,6 @@ import stripAnsi from "strip-ansi"
 import * as assertNoDiff from "../src/index"
 
 suite("assertNoDiff.chars()", function () {
-
   test("matching data", function () {
     const data = "Jean-Luc Picard"
     assertNoDiff.chars(data, data)

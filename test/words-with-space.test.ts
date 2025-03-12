@@ -5,7 +5,6 @@ import stripAnsi from "strip-ansi"
 import * as assertNoDiff from "../src/index"
 
 suite("assertNoDiff.wordsWithSpace", function () {
-
   test("matching data", function () {
     const data = "Jean-Luc Picard"
     assertNoDiff.wordsWithSpace(data, data)
