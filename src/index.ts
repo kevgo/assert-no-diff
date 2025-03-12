@@ -1,20 +1,24 @@
-import chalk from "chalk"
-import * as diff from "diff"
+import chalk from "chalk";
+import * as diff from "diff";
 
 /**
  * Checks the two given strings character-by-character for equality.
  * If there are any differences, it throws an exception with a Bash-colored diff as the error message.
  */
-export function chars(actual: string, expected: string, message = "mismatching strings"): void {
+export function chars(
+  actual: string,
+  expected: string,
+  message = "mismatching strings"
+): void {
   if (actual == null) {
-    throw new Error("AssertNoDiff: actual value not provided")
+    throw new Error("AssertNoDiff: actual value not provided");
   }
   if (expected == null) {
-    throw new Error("AssertNoDiff: expected value not provided")
+    throw new Error("AssertNoDiff: expected value not provided");
   }
-  const differences = diff.diffChars(expected, actual)
+  const differences = diff.diffChars(expected, actual);
   if (differences.length > 1) {
-    throw new Error(`${message}:\n\n${renderDiff(differences)}`)
+    throw new Error(`${message}:\n\n${renderDiff(differences)}`);
   }
 }
 
@@ -28,14 +32,14 @@ export function json(
   message = "mismatching objects"
 ): void {
   if (!actual) {
-    throw new Error("AssertNoDiff: actual value not provided")
+    throw new Error("AssertNoDiff: actual value not provided");
   }
   if (!expected) {
-    throw new Error("AssertNoDiff: expected value not provided")
+    throw new Error("AssertNoDiff: expected value not provided");
   }
-  const differences = diff.diffJson(expected, actual)
+  const differences = diff.diffJson(expected, actual);
   if (differences.length > 1) {
-    throw new Error(`${message}:\n\n${renderDiff(differences)}`)
+    throw new Error(`${message}:\n\n${renderDiff(differences)}`);
   }
 }
 
@@ -44,16 +48,20 @@ export function json(
  * Extra whitespace is ignored.
  * If there are any differences, it throws an exception with a Bash-colored diff as the error message.
  */
-export function trimmedLines(actual: string, expected: string, message = "mismatching lines"): void {
+export function trimmedLines(
+  actual: string,
+  expected: string,
+  message = "mismatching lines"
+): void {
   if (actual == null) {
-    throw new Error("AssertNoDiff: actual value not provided")
+    throw new Error("AssertNoDiff: actual value not provided");
   }
   if (expected == null) {
-    throw new Error("AssertNoDiff: expected value not provided")
+    throw new Error("AssertNoDiff: expected value not provided");
   }
-  const differences = diff.diffTrimmedLines(expected, actual)
+  const differences = diff.diffTrimmedLines(expected, actual);
   if (differences.length > 1) {
-    throw new Error(`${message}:\n\n${renderDiff(differences)}`)
+    throw new Error(`${message}:\n\n${renderDiff(differences)}`);
   }
 }
 
@@ -61,16 +69,20 @@ export function trimmedLines(actual: string, expected: string, message = "mismat
  * Checks the two given strings word-by-word for equality treating whitespace as significant.
  * If there are any differences, it throws an exception with a Bash-colored diff as the error message.
  */
-export function wordsWithSpace(actual: string, expected: string, message = "mismatching words"): void {
+export function wordsWithSpace(
+  actual: string,
+  expected: string,
+  message = "mismatching words"
+): void {
   if (actual == null) {
-    throw new Error("AssertNoDiff: actual value not provided")
+    throw new Error("AssertNoDiff: actual value not provided");
   }
   if (expected == null) {
-    throw new Error("AssertNoDiff: expected value not provided")
+    throw new Error("AssertNoDiff: expected value not provided");
   }
-  const differences = diff.diffWordsWithSpace(expected, actual)
+  const differences = diff.diffWordsWithSpace(expected, actual);
   if (differences.length > 1) {
-    throw new Error(`${message}:\n\n${renderDiff(differences)}`)
+    throw new Error(`${message}:\n\n${renderDiff(differences)}`);
   }
 }
 
@@ -94,20 +106,20 @@ export function wordsWithSpace(actual: string, expected: string, message = "mism
 /** returns the chalk function to render the given diff part */
 function getColor(part: diff.Change) {
   if (part.added) {
-    return chalk.green
+    return chalk.green;
   }
   if (part.removed) {
-    return chalk.red
+    return chalk.red;
   }
-  return chalk.grey
+  return chalk.grey;
 }
 
 /** renders the given diff into a string containing Bash colors */
 function renderDiff(differences: diff.Change[]): string {
-  let result = ""
+  let result = "";
   for (const part of differences) {
-    const color = getColor(part)
-    result += color(part.value)
+    const color = getColor(part);
+    result += color(part.value);
   }
-  return result
+  return result;
 }

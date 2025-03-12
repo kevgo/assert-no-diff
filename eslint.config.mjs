@@ -1,8 +1,8 @@
 // @ts-check
 
-import tslintPlugin from "@typescript-eslint/eslint-plugin"
-import tsParser from "@typescript-eslint/parser"
-import perfectionist from "eslint-plugin-perfectionist"
+import tslintPlugin from "@typescript-eslint/eslint-plugin";
+import tsParser from "@typescript-eslint/parser";
+import perfectionist from "eslint-plugin-perfectionist";
 
 export default [
   {
@@ -31,4 +31,4 @@ export default [
     },
   },
   perfectionist.configs["recommended-natural"],
-]
+];
