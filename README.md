@@ -3,9 +3,10 @@
 > Asserts the equality of JavaScript strings and objects with human-friendly,
 > Bash-colored diffs as error messages.
 
-[![CircleCI](https://circleci.com/gh/kevgo/assert-no-diff.svg?style=shield)](https://circleci.com/gh/kevgo/assert-no-diff)
-[![Coverage Status](https://coveralls.io/repos/github/kevgo/assert-no-diff/badge.svg?branch=master)](https://coveralls.io/github/kevgo/assert-no-diff?branch=master)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/kevgo/assert-no-diff.svg)](https://lgtm.com/projects/g/kevgo/assert-no-diff/context:javascript)
+![test status](https://github.com/kevgo/assert-no-diff/actions/workflows/tests.yml/badge.svg)
+[![Code Coverage](https://coveralls.io/repos/github/kevgo/assert-no-diff/badge.svg?branch=main)](https://coveralls.io/github/kevgo/assert-no-diff?branch=main)
+[![0 dependencies](https://img.shields.io/badge/dependencies-2-brightgreen.svg)](https://github.com/kevgo/assert-no-diff/blob/main/package.json)
+[![install size](https://packagephobia.now.sh/badge?p=assert-no-diff)](https://packagephobia.now.sh/result?assert-no-diff)
 
 This library provides the JavaScript string and object diff methods of the
 popular [diff](https://github.com/kpdecker/jsdiff) library as assertions. The
