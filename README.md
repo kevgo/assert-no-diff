@@ -15,19 +15,19 @@ expected values with human-friendly Bash-colored messages. This is useful for
 verifying the equality of larger strings or data structures in tests.
 
 ```javascript
-const assertNoDiff = require("assert-no-diff");
+const assertNoDiff = require("assert-no-diff")
 
 // assert no differences between two JavaScript objects
-assertNoDiff.json(actualJson, expectedJson);
+assertNoDiff.json(actualJson, expectedJson)
 
 // compare strings and highlight the differences character-by-character
-assertNoDiff.chars(actualString, expectedString);
+assertNoDiff.chars(actualString, expectedString)
 
 // compare strings and highlight the mismatching words, whitespace-sensitive
-assertNoDiff.wordsWithSpace(actualString, expectedString);
+assertNoDiff.wordsWithSpace(actualString, expectedString)
 
 // compare strings and highlight the mismatching lines, ignoring whitespace around them
-assertNoDiff.trimmedLines(actualString, expectedString);
+assertNoDiff.trimmedLines(actualString, expectedString)
 ```
 
 You can provide a custom error message as an optional third parameter.
