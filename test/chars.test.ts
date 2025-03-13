@@ -20,8 +20,7 @@ ${red("Je")}${green("C")}${gray("a")}${green("ptai")}${gray("n")}${red("-Luc")}$
       function() {
         assertNoDiff.chars(obj2, obj1)
       },
-      new Error(expected),
-      "should throw color-coded diff"
+      new Error(expected)
     )
   })
 

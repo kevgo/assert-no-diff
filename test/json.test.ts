@@ -1,4 +1,4 @@
-import chalk from "chalk"
+import { gray, green, red } from "colorette"
 import assert from "node:assert/strict"
 import { suite, test } from "node:test"
 import stripAnsi from "strip-ansi"
@@ -13,12 +13,17 @@ suite("assertNoDiff.json", function() {
   test("mismatching data", function() {
     const obj1 = { firstName: "Jean-Luc", lastName: "Picard" }
     const obj2 = { firstName: "Captain", lastName: "Picard" }
-    const expected = chalk`mismatching objects:
+    const expected = `mismatching objects:
 
-{grey \{\n}{red   "firstName": "Jean-Luc",\n}{green   "firstName": "Captain",\n}{grey   "lastName": "Picard"\n\}}`
-    assert.throws(function() {
-      assertNoDiff.json(obj2, obj1)
-    }, new Error(expected))
+${gray("{\n")}${red("  \"firstName\": \"Jean-Luc\",\n")}${green("  \"firstName\": \"Captain\",\n")}${
+      gray("  \"lastName\": \"Picard\"\n}")
+    }`
+    assert.throws(
+      function() {
+        assertNoDiff.json(obj2, obj1)
+      },
+      new Error(expected)
+    )
   })
 
   test("no expected value", function() {
