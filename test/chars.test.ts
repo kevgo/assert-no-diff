@@ -1,4 +1,4 @@
-import chalk from "chalk"
+import { gray, green, red } from "colorette"
 import assert from "node:assert/strict"
 import { suite, test } from "node:test"
 import stripAnsi from "strip-ansi"
@@ -13,15 +13,14 @@ suite("assertNoDiff.chars()", function() {
   test("mismatching data", function() {
     const obj1 = "Jean-Luc Picard"
     const obj2 = "Captain Picard"
-    const expected = chalk`mismatching strings:
+    const expected = `mismatching strings:
 
-{red Je}{green C}{grey a}{green ptai}{grey n}{red -Luc}{grey  Picard}`
+${red("Je")}${green("C")}${gray("a")}${green("ptai")}${gray("n")}${red("-Luc")}${gray(" Picard")}`
     assert.throws(
       function() {
         assertNoDiff.chars(obj2, obj1)
       },
-      new Error(expected),
-      "should throw color-coded diff"
+      new Error(expected)
     )
   })
 

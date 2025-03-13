@@ -1,4 +1,4 @@
-import chalk from "chalk"
+import * as colorette from "colorette"
 import * as diff from "diff"
 
 /**
@@ -103,15 +103,15 @@ export function wordsWithSpace(
 //   }
 // }
 
-/** returns the chalk function to render the given diff part */
-function getColor(part: diff.Change) {
+/** returns the color function to render the given diff part */
+function getColor(part: diff.Change): colorette.Color {
   if (part.added) {
-    return chalk.green
+    return colorette.green
   }
   if (part.removed) {
-    return chalk.red
+    return colorette.red
   }
-  return chalk.grey
+  return colorette.gray
 }
 
 /** renders the given diff into a string containing Bash colors */

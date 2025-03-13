@@ -1,4 +1,4 @@
-import chalk from "chalk"
+import { gray, green, red } from "colorette"
 import assert from "node:assert/strict"
 import { suite, test } from "node:test"
 import stripAnsi from "strip-ansi"
@@ -24,9 +24,9 @@ suite("assertNoDiff.trimmedLines", function() {
     const obj1 = "Jean-Luc\nPicard"
     const obj2 = "Captain\nPicard"
 
-    const expected = chalk`mismatching lines:
+    const expected = `mismatching lines:
 
-{red Jean-Luc\n}{green Captain\n}{grey Picard}`
+${red("Jean-Luc\n")}${green("Captain\n")}${gray("Picard")}`
     assert.throws(function() {
       assertNoDiff.trimmedLines(obj2, obj1)
     }, new Error(expected))

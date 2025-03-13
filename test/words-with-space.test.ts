@@ -1,4 +1,4 @@
-import chalk from "chalk"
+import { gray, green, red } from "colorette"
 import assert from "node:assert/strict"
 import { suite, test } from "node:test"
 import stripAnsi from "strip-ansi"
@@ -13,9 +13,9 @@ suite("assertNoDiff.wordsWithSpace", function() {
   test("mismatching data", function() {
     const obj1 = "Jean-Luc Picard"
     const obj2 = "Captain Picard"
-    const expected = chalk`mismatching words:
+    const expected = `mismatching words:
 
-{red Jean-Luc}{green Captain}{grey  Picard}`
+${red("Jean-Luc")}${green("Captain")}${gray(" Picard")}`
     assert.throws(function() {
       assertNoDiff.wordsWithSpace(obj2, obj1)
     }, new Error(expected))
@@ -24,9 +24,9 @@ suite("assertNoDiff.wordsWithSpace", function() {
   test("extra whitespace", function() {
     const obj1 = "foo bar"
     const obj2 = " foo bar"
-    const expected = chalk`mismatching words:
+    const expected = `mismatching words:
 
-{green  }{grey foo bar}`
+${green(" ")}${gray("foo bar")}`
     assert.throws(
       function() {
         assertNoDiff.wordsWithSpace(obj2, obj1)
