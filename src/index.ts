@@ -86,23 +86,6 @@ export function wordsWithSpace(
   }
 }
 
-/**
- * Chars checks the two given strings line-by-line for equality.
- * Extra whitespace is ignored.
- * If there are any differences, it throws an exception with a Bash-colored diff as the error message.
- */
-// export function arrays(
-//   actual: Array<Object>,
-//   expected: Array<Object>,
-//   message = "mismatching arrays"
-// ) {
-//   checkArgsExist(actual, expected)
-//   const differences = diff.diffArrays(expected, actual)
-//   if (differences.length > 1) {
-//     throw new Error(`${message}:\n\n${renderDiff(differences)}`)
-//   }
-// }
-
 /** returns the color function to render the given diff part */
 function getColor(part: diff.Change): colorette.Color {
   if (part.added) {
