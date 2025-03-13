@@ -15,8 +15,8 @@ suite("assertNoDiff.json", function() {
     const obj2 = { firstName: "Captain", lastName: "Picard" }
     const expected = `mismatching objects:
 
-${gray("{\n")}${red("  \"firstName\": \"Jean-Luc\",\n")}${green("  \"firstName\": \"Captain\",\n")}${
-      gray("  \"lastName\": \"Picard\"\n}")
+${gray("{\n")}${red('  "firstName": "Jean-Luc",\n')}${green('  "firstName": "Captain",\n')}${
+      gray('  "lastName": "Picard"\n}')
     }`
     assert.throws(
       function() {
@@ -45,7 +45,7 @@ ${gray("{\n")}${red("  \"firstName\": \"Jean-Luc\",\n")}${green("  \"firstName\"
       assertNoDiff.json({ a: 1 }, { a: 2 }, "custom message")
     } catch (e) {
       const stripped = stripAnsi(e.message)
-      assert.equal(stripped, "custom message:\n\n{\n  \"a\": 2\n  \"a\": 1\n}")
+      assert.equal(stripped, 'custom message:\n\n{\n  "a": 2\n  "a": 1\n}')
       return
     }
     throw new Error("assertNoDiff.json didn't throw")
