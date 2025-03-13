@@ -4,31 +4,31 @@ import { suite, test } from "node:test"
 import stripAnsi from "strip-ansi"
 import * as assertNoDiff from "../src/index"
 
-suite("assertNoDiff.wordsWithSpace", function() {
-  test("matching data", function() {
+suite("assertNoDiff.wordsWithSpace", () => {
+  test("matching data", () => {
     const data = "Jean-Luc Picard"
     assertNoDiff.wordsWithSpace(data, data)
   })
 
-  test("mismatching data", function() {
+  test("mismatching data", () => {
     const obj1 = "Jean-Luc Picard"
     const obj2 = "Captain Picard"
     const expected = `mismatching words:
 
 ${red("Jean-Luc")}${green("Captain")}${gray(" Picard")}`
-    assert.throws(function() {
+    assert.throws(() => {
       assertNoDiff.wordsWithSpace(obj2, obj1)
     }, new Error(expected))
   })
 
-  test("extra whitespace", function() {
+  test("extra whitespace", () => {
     const obj1 = "foo bar"
     const obj2 = " foo bar"
     const expected = `mismatching words:
 
 ${green(" ")}${gray("foo bar")}`
     assert.throws(
-      function() {
+      () => {
         assertNoDiff.wordsWithSpace(obj2, obj1)
       },
       new Error(expected),
@@ -36,21 +36,21 @@ ${green(" ")}${gray("foo bar")}`
     )
   })
 
-  test("no expected value", function() {
-    assert.throws(function() {
+  test("no expected value", () => {
+    assert.throws(() => {
       // @ts-ignore
       assertNoDiff.wordsWithSpace("foo")
     }, new Error("AssertNoDiff: expected value not provided"))
   })
 
-  test("no actual value", function() {
-    assert.throws(function() {
+  test("no actual value", () => {
+    assert.throws(() => {
       // @ts-ignore
       assertNoDiff.wordsWithSpace()
     }, new Error("AssertNoDiff: actual value not provided"))
   })
 
-  test("custom error message", function() {
+  test("custom error message", () => {
     try {
       assertNoDiff.wordsWithSpace("one", "two", "custom message")
     } catch (e) {
@@ -61,7 +61,7 @@ ${green(" ")}${gray("foo bar")}`
     throw new Error("assertNoDiff.wordsWithSpace didn't throw")
   })
 
-  test("empty strings", function() {
+  test("empty strings", () => {
     assertNoDiff.wordsWithSpace("", "", "should allow diffing empty strings")
   })
 })
