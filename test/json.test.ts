@@ -40,7 +40,7 @@ suite("assertNoDiff.json", function() {
       assertNoDiff.json({ a: 1 }, { a: 2 }, "custom message")
     } catch (e) {
       const stripped = stripAnsi(e.message)
-      assert.equal(stripped, "custom message:\n\n{\n  \"a\": 2\n  \"a\": 1\n}")
+      assert.equal(stripped, 'custom message:\n\n{\n  "a": 2\n  "a": 1\n}')
       return
     }
     throw new Error("assertNoDiff.json didn't throw")
