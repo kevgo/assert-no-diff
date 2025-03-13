@@ -15,7 +15,7 @@ suite("assertNoDiff.chars()", function () {
     const obj2 = "Captain Picard"
     const expected = `mismatching strings:
 
-${red("Je")}${green("C")}${gray("a")}${green("ptai")}${gray("n")}${red("- Luc")}${gray("Picard")}`
+${red("Je")}${green("C")}${gray("a")}${green("ptai")}${gray("n")}${red("-Luc")}${gray(" Picard")}`
     assert.throws(
       function () {
         assertNoDiff.chars(obj2, obj1)
