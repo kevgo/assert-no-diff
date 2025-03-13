@@ -4,41 +4,41 @@ import { suite, test } from "node:test"
 import stripAnsi from "strip-ansi"
 import * as assertNoDiff from "../src/index"
 
-suite("assertNoDiff.chars()", function() {
-  test("matching data", function() {
+suite("assertNoDiff.chars()", () => {
+  test("matching data", () => {
     const data = "Jean-Luc Picard"
     assertNoDiff.chars(data, data)
   })
 
-  test("mismatching data", function() {
+  test("mismatching data", () => {
     const obj1 = "Jean-Luc Picard"
     const obj2 = "Captain Picard"
     const expected = `mismatching strings:
 
 ${red("Je")}${green("C")}${gray("a")}${green("ptai")}${gray("n")}${red("-Luc")}${gray(" Picard")}`
     assert.throws(
-      function() {
+      () => {
         assertNoDiff.chars(obj2, obj1)
       },
       new Error(expected)
     )
   })
 
-  test("no expected value", function() {
-    assert.throws(function() {
+  test("no expected value", () => {
+    assert.throws(() => {
       // @ts-ignore: intentional call without second argument
       assertNoDiff.chars("foo")
     }, new Error("AssertNoDiff: expected value not provided"))
   })
 
-  test("no actual value", function() {
-    assert.throws(function() {
+  test("no actual value", () => {
+    assert.throws(() => {
       // @ts-ignore: intentional call without arguments
       assertNoDiff.chars()
     }, new Error("AssertNoDiff: actual value not provided"))
   })
 
-  test("providing a custom message", function() {
+  test("providing a custom message", () => {
     try {
       assertNoDiff.chars("one", "two", "custom message")
     } catch (e) {
@@ -49,7 +49,7 @@ ${red("Je")}${green("C")}${gray("a")}${green("ptai")}${gray("n")}${red("-Luc")}$
     throw new Error("assertNoDiff.chars didn't throw")
   })
 
-  test("diffing against empty strings", function() {
+  test("diffing against empty strings", () => {
     assertNoDiff.chars("", "")
   })
 })

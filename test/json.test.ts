@@ -4,13 +4,13 @@ import { suite, test } from "node:test"
 import stripAnsi from "strip-ansi"
 import * as assertNoDiff from "../src/index"
 
-suite("assertNoDiff.json", function() {
-  test("matching data", function() {
+suite("assertNoDiff.json", () => {
+  test("matching data", () => {
     const data = { firstName: "Jean-Luc", lastName: "Picard" }
     assertNoDiff.json(data, data)
   })
 
-  test("mismatching data", function() {
+  test("mismatching data", () => {
     const obj1 = { firstName: "Jean-Luc", lastName: "Picard" }
     const obj2 = { firstName: "Captain", lastName: "Picard" }
     const expected = `mismatching objects:
@@ -19,28 +19,28 @@ ${gray("{\n")}${red('  "firstName": "Jean-Luc",\n')}${green('  "firstName": "Cap
       gray('  "lastName": "Picard"\n}')
     }`
     assert.throws(
-      function() {
+      () => {
         assertNoDiff.json(obj2, obj1)
       },
       new Error(expected)
     )
   })
 
-  test("no expected value", function() {
-    assert.throws(function() {
+  test("no expected value", () => {
+    assert.throws(() => {
       // @ts-ignore
       assertNoDiff.json("foo")
     }, new Error("AssertNoDiff: expected value not provided"))
   })
 
-  test("no actual value", function() {
-    assert.throws(function() {
+  test("no actual value", () => {
+    assert.throws(() => {
       // @ts-ignore
       assertNoDiff.json()
     }, new Error("AssertNoDiff: actual value not provided"))
   })
 
-  test("custom error message", function() {
+  test("custom error message", () => {
     try {
       assertNoDiff.json({ a: 1 }, { a: 2 }, "custom message")
     } catch (e) {
@@ -51,7 +51,7 @@ ${gray("{\n")}${red('  "firstName": "Jean-Luc",\n')}${green('  "firstName": "Cap
     throw new Error("assertNoDiff.json didn't throw")
   })
 
-  test("diffing empty objects", function() {
+  test("diffing empty objects", () => {
     assertNoDiff.json({}, {})
   })
 })
