@@ -38,6 +38,7 @@
     "dprint": "0.49.0",
     "eslint": "9.22.0",
     "eslint-plugin-perfectionist": "4.10.1",
+    "npm-check-updates": "17.1.15",
     "sort-package-json": "1.57.0",
     "strip-ansi": "6.0.0",
     "text-runner": "7.1.0",
