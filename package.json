@@ -20,7 +20,7 @@
     "doc": "text-runner",
     "fix": "dprint fmt && eslint --fix && sort-package-json",
     "lint": "eslint && dprint check && tsc --noEmit && sort-package-json --check",
-    "prepublishOnly": "tsc",
+    "prepublishOnly": "npm run build",
     "setup": "npm install",
     "test": "npm run lint && npm run unit && npm run doc",
     "unit": "node --test --import tsx test/*.test.ts",
