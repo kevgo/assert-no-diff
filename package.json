@@ -22,7 +22,7 @@
     "lint": "eslint && dprint check && tsc --noEmit && sort-package-json --check --quiet",
     "prepublishOnly": "npm run build",
     "setup": "npm install",
-    "test": "npm run lint && npm run unit && npm run doc",
+    "test": "npm run build && npm run fix && npm run lint && npm run unit && npm run doc",
     "unit": "node --test --import tsx test/*.test.ts",
     "update": "npm-check-updates -u && npm install"
   },
