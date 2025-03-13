@@ -13,8 +13,8 @@
   ],
   "options": {
     "beforeRun": {
-      "clearScreen": false,
-      "newlines": 3
+      "clearScreen": true,
+      "newlines": 0
     },
     "afterRun": {
       "newlines": 1,
