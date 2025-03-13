@@ -1,4 +1,4 @@
-import { green, red } from "colorette"
+import { green, red, gray } from "colorette"
 import assert from "node:assert/strict"
 import { suite, test } from "node:test"
 import stripAnsi from "strip-ansi"
@@ -15,7 +15,7 @@ suite("assertNoDiff.chars()", function () {
     const obj2 = "Captain Picard"
     const expected = `mismatching strings:
 
-${red("Je")}{ green("C") }{ grey a }{ green ptai }{ grey n }{ red - Luc}{ grey  Picard }`
+${red("Je")}${green("C")}${gray("a")}${green("ptai")}${gray("n")}${red("- Luc")}${gray("Picard")}`
     assert.throws(
       function () {
         assertNoDiff.chars(obj2, obj1)
