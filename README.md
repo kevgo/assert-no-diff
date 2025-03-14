@@ -14,7 +14,7 @@ expected values with human-friendly Bash-colored messages. This is useful for
 verifying the equality of larger strings or data structures in tests.
 
 ```javascript
-const assertNoDiff = require("assert-no-diff")
+import * as assertNoDiff from "assert-no-diff"
 
 // assert no differences between two JavaScript objects
 assertNoDiff.json(actualJson, expectedJson)
