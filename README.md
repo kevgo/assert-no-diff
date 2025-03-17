@@ -16,16 +16,19 @@ verifying the equality of larger strings or data structures in tests.
 ```javascript
 import * as assertNoDiff from "assert-no-diff"
 
-// assert no differences between two JavaScript objects
+// Diffs two JSON objects, comparing the fields defined on each.
+// The order of fields does not matter.
 assertNoDiff.json(actualJson, expectedJson)
 
-// compare strings and highlight the differences character-by-character
+// Asserts that two blocks of text are equal, comparing character by character.
 assertNoDiff.chars(actualString, expectedString)
 
-// compare strings and highlight the mismatching words, whitespace-sensitive
+// Diffs two blocks of text, comparing word by word.
+// Whitespace is significant.
 assertNoDiff.wordsWithSpace(actualString, expectedString)
 
-// compare strings and highlight the mismatching lines, ignoring whitespace around them
+// Diffs two blocks of text, comparing line by line.
+// Ignores leading and trailing whitespace.
 assertNoDiff.trimmedLines(actualString, expectedString)
 ```
 
