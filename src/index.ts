@@ -25,7 +25,7 @@ export function chars(
 
 /**
  * Diffs two JSON objects, comparing the fields defined on each.
- * The order of fields, etc does not matter.
+ * The order of fields does not matter.
  *
  * @throws a bash-colored error if the arguments are not equal
  */
@@ -47,7 +47,8 @@ export function json(
 }
 
 /**
- * Diffs two blocks of text, comparing line by line, ignoring leading and trailing whitespace.
+ * Diffs two blocks of text, comparing line by line.
+ * Ignores leading and trailing whitespace.
  *
  * @throws a bash-colored error if the arguments are not equal
  */
@@ -69,7 +70,8 @@ export function trimmedLines(
 }
 
 /**
- * Diffs two blocks of text, comparing word by word, treating whitespace as significant.
+ * Diffs two blocks of text, comparing word by word.
+ * Whitespace is significant.
  *
  * @throws a bash-colored error if the arguments are not equal
  */
