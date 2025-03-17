@@ -9,7 +9,8 @@ import * as diff from "diff"
 export function chars(
   actual: string,
   expected: string,
-  message = "mismatching strings"
+  message = "mismatching strings",
+  options?: diff.BaseOptions
 ) {
   if (actual == null) {
     throw new Error("AssertNoDiff: actual value not provided")
@@ -17,7 +18,7 @@ export function chars(
   if (expected == null) {
     throw new Error("AssertNoDiff: expected value not provided")
   }
-  const differences = diff.diffChars(expected, actual)
+  const differences = diff.diffChars(expected, actual, options)
   if (differences.length > 1) {
     throw new Error(`${message}:\n\n${renderDiff(differences)}`)
   }
@@ -30,9 +31,10 @@ export function chars(
  * @throws a bash-colored error if the arguments are not equal
  */
 export function json(
-  actual: Record<string, unknown> | string[],
-  expected: Record<string, unknown> | string[],
-  message = "mismatching objects"
+  actual: object | string,
+  expected: object | string,
+  message = "mismatching objects",
+  options?: diff.JsonOptions
 ) {
   if (!actual) {
     throw new Error("AssertNoDiff: actual value not provided")
@@ -40,7 +42,7 @@ export function json(
   if (!expected) {
     throw new Error("AssertNoDiff: expected value not provided")
   }
-  const differences = diff.diffJson(expected, actual)
+  const differences = diff.diffJson(expected, actual, options)
   if (differences.length > 1) {
     throw new Error(`${message}:\n\n${renderDiff(differences)}`)
   }
@@ -55,7 +57,8 @@ export function json(
 export function trimmedLines(
   actual: string,
   expected: string,
-  message = "mismatching lines"
+  message = "mismatching lines",
+  options?: diff.LinesOptions
 ) {
   if (actual == null) {
     throw new Error("AssertNoDiff: actual value not provided")
@@ -63,7 +66,7 @@ export function trimmedLines(
   if (expected == null) {
     throw new Error("AssertNoDiff: expected value not provided")
   }
-  const differences = diff.diffTrimmedLines(expected, actual)
+  const differences = diff.diffTrimmedLines(expected, actual, options)
   if (differences.length > 1) {
     throw new Error(`${message}:\n\n${renderDiff(differences)}`)
   }
@@ -78,7 +81,8 @@ export function trimmedLines(
 export function wordsWithSpace(
   actual: string,
   expected: string,
-  message = "mismatching words"
+  message = "mismatching words",
+  options?: diff.WordsOptions
 ) {
   if (actual == null) {
     throw new Error("AssertNoDiff: actual value not provided")
@@ -86,7 +90,7 @@ export function wordsWithSpace(
   if (expected == null) {
     throw new Error("AssertNoDiff: expected value not provided")
   }
-  const differences = diff.diffWordsWithSpace(expected, actual)
+  const differences = diff.diffWordsWithSpace(expected, actual, options)
   if (differences.length > 1) {
     throw new Error(`${message}:\n\n${renderDiff(differences)}`)
   }
