@@ -52,4 +52,8 @@ ${red("Je")}${green("C")}${gray("a")}${green("ptai")}${gray("n")}${red("-Luc")}$
   test("diffing against empty strings", () => {
     assertNoDiff.chars("", "")
   })
+
+  test("options", () => {
+    assertNoDiff.chars("aaa", "AAA", "should be similar", { ignoreCase: true })
+  })
 })

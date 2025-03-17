@@ -54,4 +54,8 @@ ${gray("{\n")}${red('  "firstName": "Jean-Luc",\n')}${green('  "firstName": "Cap
   test("diffing empty objects", () => {
     assertNoDiff.json({}, {})
   })
+
+  test("options", () => {
+    assertNoDiff.json("aaa", "AAA", "should be similar", { ignoreCase: true })
+  })
 })
