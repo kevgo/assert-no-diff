@@ -1,6 +1,6 @@
 {
   "name": "assert-no-diff",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "Asserts the equality of JavaScript strings and objects with human-friendly, Bash-colored diffs as error messages",
   "homepage": "https://github.com/kevgo/assert-no-diff#readme",
   "repository": {
