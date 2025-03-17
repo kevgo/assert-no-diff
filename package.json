@@ -18,7 +18,7 @@
     "build": "tsc",
     "clean": "rm -rf dist",
     "coverage": "node --test --import tsx --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=lcov.info -- test/*.test.ts",
-    "doc": "text-runner",
+    "doc": "text-runner --format=summary",
     "fix": "dprint fmt && eslint --fix && sort-package-json --quiet",
     "lint": "eslint && dprint check && tsc --noEmit && sort-package-json --check --quiet",
     "prepublishOnly": "npm run build",
