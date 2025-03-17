@@ -2,8 +2,9 @@ import * as colorette from "colorette"
 import * as diff from "diff"
 
 /**
- * Checks the two given strings character-by-character for equality.
- * If there are any differences, it throws an exception with a Bash-colored diff as the error message.
+ * Asserts that two blocks of text are equal, comparing character by character.
+ *
+ * @throws a bash-colored error if the arguments are not equal
  */
 export function chars(
   actual: string,
@@ -23,8 +24,10 @@ export function chars(
 }
 
 /**
- * Checks the two given Objects for equality.
- * If there are any differences, it throws an exception with a Bash-colored diff as the error message.
+ * Diffs two JSON objects, comparing the fields defined on each.
+ * The order of fields, etc does not matter.
+ *
+ * @throws a bash-colored error if the arguments are not equal
  */
 export function json(
   actual: Record<string, unknown> | string[],
@@ -44,9 +47,9 @@ export function json(
 }
 
 /**
- * Checks the two given strings line-by-line for equality.
- * Extra whitespace is ignored.
- * If there are any differences, it throws an exception with a Bash-colored diff as the error message.
+ * Diffs two blocks of text, comparing line by line, ignoring leading and trailing whitespace.
+ *
+ * @throws a bash-colored error if the arguments are not equal
  */
 export function trimmedLines(
   actual: string,
@@ -66,8 +69,9 @@ export function trimmedLines(
 }
 
 /**
- * Checks the two given strings word-by-word for equality treating whitespace as significant.
- * If there are any differences, it throws an exception with a Bash-colored diff as the error message.
+ * Diffs two blocks of text, comparing word by word, treating whitespace as significant.
+ *
+ * @throws a bash-colored error if the arguments are not equal
  */
 export function wordsWithSpace(
   actual: string,
