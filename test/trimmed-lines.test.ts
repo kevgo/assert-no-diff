@@ -60,4 +60,8 @@ ${red("Jean-Luc\n")}${green("Captain\n")}${gray("Picard")}`
   test("diffing empty strings", () => {
     assertNoDiff.trimmedLines("", "", "should allow diffing empty strings")
   })
+
+  test("options", () => {
+    assertNoDiff.trimmedLines("aaa", "AAA", "should be similar", { ignoreCase: true })
+  })
 })

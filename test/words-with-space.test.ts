@@ -64,4 +64,8 @@ ${green(" ")}${gray("foo bar")}`
   test("empty strings", () => {
     assertNoDiff.wordsWithSpace("", "", "should allow diffing empty strings")
   })
+
+  test("options", () => {
+    assertNoDiff.wordsWithSpace("aaa", "AAA", "should be similar", { ignoreCase: true })
+  })
 })
