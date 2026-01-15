@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "colorette": "2.0.20",
-    "diff": "7.0.0"
+    "diff": "8.0.3"
   },
   "devDependencies": {
     "@eslint/js": "9.22.0",
